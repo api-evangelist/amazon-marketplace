@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-tag-value-structure.json",
+  "name": "TagValue",
+  "description": "TagValue schema from Amazon Marketplace API",
+  "type": "string",
+  "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
+}

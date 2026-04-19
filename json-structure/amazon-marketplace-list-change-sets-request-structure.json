@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-list-change-sets-request-structure.json",
+  "name": "ListChangeSetsRequest",
+  "description": "ListChangeSetsRequest schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "Catalog": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Catalog"
+        },
+        {
+          "description": "The catalog related to the request. Fixed value: <code>AWSMarketplace</code> "
+        }
+      ]
+    },
+    "FilterList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterList"
+        },
+        {
+          "description": "An array of filter objects."
+        }
+      ]
+    },
+    "Sort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Sort"
+        },
+        {
+          "description": "An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListChangeSetsMaxResultInteger"
+        },
+        {
+          "description": "The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The token value retrieved from a previous call to access the next page of results."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Catalog"
+  ]
+}

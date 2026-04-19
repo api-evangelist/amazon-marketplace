@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-change-set-summary-list-item-schema.json",
+  "title": "ChangeSetSummaryListItem",
+  "description": "A summary of a change set returned in a list of change sets when the <code>ListChangeSets</code> action is called.",
+  "type": "object",
+  "properties": {
+    "ChangeSetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The unique identifier for a change set."
+        }
+      ]
+    },
+    "ChangeSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "The ARN associated with the unique identifier for the change set referenced in this request."
+        }
+      ]
+    },
+    "ChangeSetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeSetName"
+        },
+        {
+          "description": "The non-unique name for the change set."
+        }
+      ]
+    },
+    "StartTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeISO8601"
+        },
+        {
+          "description": "The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started."
+        }
+      ]
+    },
+    "EndTime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeISO8601"
+        },
+        {
+          "description": "The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished."
+        }
+      ]
+    },
+    "Status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeStatus"
+        },
+        {
+          "description": "The current status of the change set."
+        }
+      ]
+    },
+    "EntityIdList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceIdList"
+        },
+        {
+          "description": "This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity."
+        }
+      ]
+    },
+    "FailureCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailureCode"
+        },
+        {
+          "description": "Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request."
+        }
+      ]
+    }
+  }
+}

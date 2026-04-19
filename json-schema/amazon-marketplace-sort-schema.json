@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-sort-schema.json",
+  "title": "Sort",
+  "description": "An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.",
+  "type": "object",
+  "properties": {
+    "SortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortBy"
+        },
+        {
+          "description": "<p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>"
+        }
+      ]
+    },
+    "SortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>."
+        }
+      ]
+    }
+  }
+}

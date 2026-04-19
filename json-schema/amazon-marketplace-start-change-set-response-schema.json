@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-start-change-set-response-schema.json",
+  "title": "StartChangeSetResponse",
+  "description": "StartChangeSetResponse schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "ChangeSetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "Unique identifier generated for the request."
+        }
+      ]
+    },
+    "ChangeSetArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "The ARN associated to the unique identifier generated for the request."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-list-entities-request-structure.json",
+  "name": "ListEntitiesRequest",
+  "description": "ListEntitiesRequest schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "Catalog": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Catalog"
+        },
+        {
+          "description": "The catalog related to the request. Fixed value: <code>AWSMarketplace</code> "
+        }
+      ]
+    },
+    "EntityType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityType"
+        },
+        {
+          "description": "The type of entities to retrieve."
+        }
+      ]
+    },
+    "FilterList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterList"
+        },
+        {
+          "description": "An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>."
+        }
+      ]
+    },
+    "Sort": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Sort"
+        },
+        {
+          "description": "An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The value of the next token, if it exists. Null if there are no more results."
+        }
+      ]
+    },
+    "MaxResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListEntitiesMaxResultInteger"
+        },
+        {
+          "description": "Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20."
+        }
+      ]
+    },
+    "OwnershipType": {
+      "$ref": "#/components/schemas/OwnershipType"
+    }
+  },
+  "required": [
+    "Catalog",
+    "EntityType"
+  ]
+}

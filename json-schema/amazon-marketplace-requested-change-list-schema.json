@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-requested-change-list-schema.json",
+  "title": "RequestedChangeList",
+  "description": "RequestedChangeList schema from Amazon Marketplace API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/Change"
+  }
+}

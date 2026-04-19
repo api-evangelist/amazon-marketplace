@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-entity-summary-schema.json",
+  "title": "EntitySummary",
+  "description": "This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityNameString"
+        },
+        {
+          "description": "The name for the entity. This value is not unique. It is defined by the seller."
+        }
+      ]
+    },
+    "EntityType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityType"
+        },
+        {
+          "description": "The type of the entity."
+        }
+      ]
+    },
+    "EntityId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The unique identifier for the entity."
+        }
+      ]
+    },
+    "EntityArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "The ARN associated with the unique identifier for the entity."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeISO8601"
+        },
+        {
+          "description": "The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z)."
+        }
+      ]
+    },
+    "Visibility": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VisibilityValue"
+        },
+        {
+          "description": "The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). "
+        }
+      ]
+    }
+  }
+}

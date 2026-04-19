@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-put-resource-policy-request-schema.json",
+  "title": "PutResourcePolicyRequest",
+  "description": "PutResourcePolicyRequest schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceARN"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy. "
+        }
+      ]
+    },
+    "Policy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourcePolicyJson"
+        },
+        {
+          "description": "The policy document to set; formatted in JSON."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResourceArn",
+    "Policy"
+  ]
+}

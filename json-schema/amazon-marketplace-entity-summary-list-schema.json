@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-entity-summary-list-schema.json",
+  "title": "EntitySummaryList",
+  "description": "EntitySummaryList schema from Amazon Marketplace API",
+  "type": "array",
+  "items": {
+    "$ref": "#/components/schemas/EntitySummary"
+  }
+}

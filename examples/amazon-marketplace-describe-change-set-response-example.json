@@ -1,0 +1,11 @@
+{
+  "ChangeSetId": "abc12345",
+  "ChangeSetArn": "arn:aws:service:us-east-1:123456789012:resource/id",
+  "ChangeSetName": "my-resource",
+  "StartTime": "example-value",
+  "EndTime": "example-value",
+  "Status": "ACTIVE",
+  "FailureCode": "example-value",
+  "FailureDescription": "Example resource description",
+  "ChangeSet": "example-value"
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-change-schema.json",
+  "title": "Change",
+  "description": "An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.",
+  "type": "object",
+  "properties": {
+    "ChangeType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeType"
+        },
+        {
+          "description": "Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope. For more information on change types available for single-AMI products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products\">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products\">Working with container products</a>."
+        }
+      ]
+    },
+    "Entity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Entity"
+        },
+        {
+          "description": "The entity to be changed."
+        }
+      ]
+    },
+    "EntityTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "The tags associated with the change."
+        }
+      ]
+    },
+    "Details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Json"
+        },
+        {
+          "description": "This object contains details specific to the change type of the requested change. For more information on change types available for single-AMI products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products\">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products\">Working with container products</a>."
+        }
+      ]
+    },
+    "ChangeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeName"
+        },
+        {
+          "description": "Optional name for the change."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ChangeType",
+    "Entity",
+    "Details"
+  ]
+}

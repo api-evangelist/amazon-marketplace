@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-entity-structure.json",
+  "name": "Entity",
+  "description": "An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. ",
+  "type": "object",
+  "properties": {
+    "Type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityType"
+        },
+        {
+          "description": "The type of entity."
+        }
+      ]
+    },
+    "Identifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Identifier"
+        },
+        {
+          "description": "The identifier for the entity."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Type"
+  ]
+}

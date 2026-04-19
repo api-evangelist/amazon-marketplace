@@ -1,0 +1,264 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "AWS Marketplace Catalog API"
+  description: "Programmatic access to manage entities and change sets for publishing and updating software products on AWS Marketplace."
+  tags:
+    - Amazon
+    - Marketplace
+    - Commerce
+    - Software Catalog
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - type: http
+      namespace: marketplace-catalog
+      baseUri: https://catalog.marketplace.us-east-1.amazonaws.com
+      description: "AWS Marketplace Catalog API for managing entities and change sets."
+      authentication:
+        type: apikey
+        key: Authorization
+        value: "{{AWS_ACCESS_KEY_ID}}"
+        placement: header
+      resources:
+        - name: entities
+          path: /ListEntities
+          description: "Manage marketplace entities (products, offers, data products)."
+          operations:
+            - name: list-entities
+              method: POST
+              description: "List entities in the catalog."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: describe-entity
+              method: GET
+              description: "Describe a specific marketplace entity."
+              inputParameters:
+                - name: catalog
+                  in: query
+                  type: string
+                  required: true
+                  description: "The catalog identifier."
+                - name: entityId
+                  in: query
+                  type: string
+                  required: true
+                  description: "The entity identifier."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: change-sets
+          path: /ListChangeSets
+          description: "Manage change sets for publishing and updating entities."
+          operations:
+            - name: list-change-sets
+              method: POST
+              description: "List change sets in the catalog."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: describe-change-set
+              method: GET
+              description: "Describe a specific change set."
+              inputParameters:
+                - name: catalog
+                  in: query
+                  type: string
+                  required: true
+                  description: "The catalog identifier."
+                - name: changeSetId
+                  in: query
+                  type: string
+                  required: true
+                  description: "The change set identifier."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: start-change-set
+              method: POST
+              description: "Start a new change set to update or publish a marketplace entity."
+              body:
+                type: json
+                data:
+                  catalog: "{{tools.catalog}}"
+                  changeSet: "{{tools.changeSet}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: cancel-change-set
+              method: PATCH
+              description: "Cancel an active change set."
+              inputParameters:
+                - name: catalog
+                  in: query
+                  type: string
+                  required: true
+                  description: "The catalog identifier."
+                - name: changeSetId
+                  in: query
+                  type: string
+                  required: true
+                  description: "The change set identifier to cancel."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: resource-policies
+          path: /GetResourcePolicy
+          description: "Manage resource-based policies for marketplace entities."
+          operations:
+            - name: get-resource-policy
+              method: GET
+              description: "Get the resource-based policy for a marketplace entity."
+              inputParameters:
+                - name: resourceArn
+                  in: query
+                  type: string
+                  required: true
+                  description: "The ARN of the resource."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: put-resource-policy
+              method: POST
+              description: "Attach a resource-based policy to a marketplace entity."
+              body:
+                type: json
+                data:
+                  resourceArn: "{{tools.resourceArn}}"
+                  policy: "{{tools.policy}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: delete-resource-policy
+              method: DELETE
+              description: "Delete the resource-based policy from a marketplace entity."
+              inputParameters:
+                - name: resourceArn
+                  in: query
+                  type: string
+                  required: true
+                  description: "The ARN of the resource."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+        - name: tags
+          path: /ListTagsForResource
+          description: "Manage tags for marketplace resources."
+          operations:
+            - name: list-tags-for-resource
+              method: GET
+              description: "List tags for a marketplace resource."
+              inputParameters:
+                - name: resourceArn
+                  in: query
+                  type: string
+                  required: true
+                  description: "The ARN of the resource."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: tag-resource
+              method: POST
+              description: "Add tags to a marketplace resource."
+              body:
+                type: json
+                data:
+                  resourceArn: "{{tools.resourceArn}}"
+                  tags: "{{tools.tags}}"
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+            - name: untag-resource
+              method: DELETE
+              description: "Remove tags from a marketplace resource."
+              outputRawFormat: json
+              outputParameters:
+                - name: result
+                  type: object
+                  value: "$."
+
+  exposes:
+    - type: rest
+      port: 8100
+      namespace: marketplace-catalog-api
+      resources:
+        - path: /v1/entities
+          name: entities
+          description: "Marketplace entities"
+          operations:
+            - method: POST
+              name: list-entities
+              description: "List marketplace entities."
+              call: "marketplace-catalog.list-entities"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/change-sets
+          name: change-sets
+          description: "Marketplace change sets"
+          operations:
+            - method: POST
+              name: list-change-sets
+              description: "List marketplace change sets."
+              call: "marketplace-catalog.list-change-sets"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9100
+      namespace: marketplace-catalog-mcp
+      transport: http
+      tools:
+        - name: list-entities
+          description: "List entities in the AWS Marketplace catalog."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "marketplace-catalog.list-entities"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-entity
+          description: "Describe a specific AWS Marketplace entity."
+          hints:
+            readOnly: true
+          call: "marketplace-catalog.describe-entity"
+          with:
+            catalog: "tools.catalog"
+            entityId: "tools.entityId"
+          outputParameters:
+            - type: object
+              mapping: "$."

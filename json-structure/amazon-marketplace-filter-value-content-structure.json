@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-filter-value-content-structure.json",
+  "name": "FilterValueContent",
+  "description": "FilterValueContent schema from Amazon Marketplace API",
+  "type": "string",
+  "pattern": "^(.)+$"
+}

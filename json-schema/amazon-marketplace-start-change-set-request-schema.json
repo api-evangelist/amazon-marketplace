@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-start-change-set-request-schema.json",
+  "title": "StartChangeSetRequest",
+  "description": "StartChangeSetRequest schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "Catalog": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Catalog"
+        },
+        {
+          "description": "The catalog related to the request. Fixed value: <code>AWSMarketplace</code> "
+        }
+      ]
+    },
+    "ChangeSet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RequestedChangeList"
+        },
+        {
+          "description": "Array of <code>change</code> object."
+        }
+      ]
+    },
+    "ChangeSetName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeSetName"
+        },
+        {
+          "description": "Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. "
+        }
+      ]
+    },
+    "ClientRequestToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ClientRequestToken"
+        },
+        {
+          "description": "A unique token to identify the request to ensure idempotency."
+        }
+      ]
+    },
+    "ChangeSetTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagList"
+        },
+        {
+          "description": "A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Catalog",
+    "ChangeSet"
+  ]
+}

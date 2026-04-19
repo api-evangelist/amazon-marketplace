@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-tag-schema.json",
+  "title": "Tag",
+  "description": "A list of objects specifying each key name and value.",
+  "type": "object",
+  "properties": {
+    "Key": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagKey"
+        },
+        {
+          "description": "The key associated with the tag."
+        }
+      ]
+    },
+    "Value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagValue"
+        },
+        {
+          "description": "The value associated with the tag."
+        }
+      ]
+    }
+  },
+  "required": [
+    "Key",
+    "Value"
+  ]
+}

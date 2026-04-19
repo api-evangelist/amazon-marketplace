@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-describe-entity-response-schema.json",
+  "title": "DescribeEntityResponse",
+  "description": "DescribeEntityResponse schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "EntityType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EntityType"
+        },
+        {
+          "description": "The named type of the entity, in the format of <code>EntityType@Version</code>."
+        }
+      ]
+    },
+    "EntityIdentifier": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Identifier"
+        },
+        {
+          "description": "The identifier of the entity, in the format of <code>EntityId@RevisionId</code>."
+        }
+      ]
+    },
+    "EntityArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ARN"
+        },
+        {
+          "description": "The ARN associated to the unique identifier for the entity referenced in this request."
+        }
+      ]
+    },
+    "LastModifiedDate": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeISO8601"
+        },
+        {
+          "description": "The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z)."
+        }
+      ]
+    },
+    "Details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Json"
+        },
+        {
+          "description": "This stringified JSON object includes the details of the entity."
+        }
+      ]
+    }
+  }
+}

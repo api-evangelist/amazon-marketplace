@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-untag-resource-response-structure.json",
+  "name": "UntagResourceResponse",
+  "description": "UntagResourceResponse schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {}
+}

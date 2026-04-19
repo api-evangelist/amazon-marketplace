@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-list-change-sets-response-schema.json",
+  "title": "ListChangeSetsResponse",
+  "description": "ListChangeSetsResponse schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "ChangeSetSummaryList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeSetSummaryList"
+        },
+        {
+          "description": " Array of <code>ChangeSetSummaryListItem</code> objects."
+        }
+      ]
+    },
+    "NextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The value of the next token, if it exists. Null if there are no more results."
+        }
+      ]
+    }
+  }
+}

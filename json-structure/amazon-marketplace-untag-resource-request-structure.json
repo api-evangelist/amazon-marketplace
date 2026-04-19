@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-untag-resource-request-structure.json",
+  "name": "UntagResourceRequest",
+  "description": "UntagResourceRequest schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceARN"
+        },
+        {
+          "description": "Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from."
+        }
+      ]
+    },
+    "TagKeys": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagKeyList"
+        },
+        {
+          "description": "Required. A list of key names of tags to be removed. Number of strings allowed: 0-256."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResourceArn",
+    "TagKeys"
+  ]
+}

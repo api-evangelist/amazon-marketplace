@@ -1,0 +1,6 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-resource-in-use-exception-schema.json",
+  "title": "ResourceInUseException",
+  "description": "ResourceInUseException schema from Amazon Marketplace API"
+}

@@ -1,0 +1,167 @@
+naftiko: "1.0.0-alpha1"
+
+info:
+  label: "Amazon Marketplace - Catalog Management Workflow"
+  description: "Workflow capability for ISV sellers and marketplace operators to publish, update, and manage software products and offers on AWS Marketplace using the Catalog API."
+  tags:
+    - Amazon
+    - Marketplace
+    - Commerce
+    - Software Catalog
+    - ISV
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+binds:
+  - namespace: env
+    keys:
+      AWS_ACCESS_KEY_ID: AWS_ACCESS_KEY_ID
+      AWS_SECRET_ACCESS_KEY: AWS_SECRET_ACCESS_KEY
+      AWS_REGION: AWS_REGION
+
+capability:
+  consumes:
+    - import: marketplace-catalog
+      location: ./shared/marketplace-catalog.yaml
+
+  exposes:
+    - type: rest
+      port: 8080
+      namespace: marketplace-workflow-api
+      description: "Unified REST API for AWS Marketplace catalog management workflows."
+      resources:
+        - path: /v1/entities
+          name: entities
+          description: "Manage marketplace entities (products, offers)."
+          operations:
+            - method: POST
+              name: list-entities
+              description: "List entities available in the marketplace catalog."
+              call: "marketplace-catalog.list-entities"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: describe-entity
+              description: "Get details of a specific marketplace entity."
+              call: "marketplace-catalog.describe-entity"
+              with:
+                catalog: "rest.catalog"
+                entityId: "rest.entityId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/change-sets
+          name: change-sets
+          description: "Manage change sets for publishing and updating marketplace entities."
+          operations:
+            - method: POST
+              name: list-change-sets
+              description: "List change sets in the marketplace catalog."
+              call: "marketplace-catalog.list-change-sets"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+            - method: GET
+              name: describe-change-set
+              description: "Get details of a specific change set."
+              call: "marketplace-catalog.describe-change-set"
+              with:
+                catalog: "rest.catalog"
+                changeSetId: "rest.changeSetId"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+        - path: /v1/publish
+          name: publish
+          description: "Publish and update marketplace listings."
+          operations:
+            - method: POST
+              name: start-change-set
+              description: "Start a change set to publish or update a marketplace entity."
+              call: "marketplace-catalog.start-change-set"
+              with:
+                catalog: "rest.catalog"
+                changeSet: "rest.changeSet"
+              outputParameters:
+                - type: object
+                  mapping: "$."
+
+    - type: mcp
+      port: 9090
+      namespace: marketplace-workflow-mcp
+      transport: http
+      description: "MCP server for AI-assisted AWS Marketplace catalog management."
+      tools:
+        - name: list-marketplace-entities
+          description: "List software products, offers, and data products available in the AWS Marketplace catalog."
+          hints:
+            readOnly: true
+            openWorld: true
+          call: "marketplace-catalog.list-entities"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-marketplace-entity
+          description: "Get detailed information about a specific AWS Marketplace entity including its attributes and status."
+          hints:
+            readOnly: true
+          call: "marketplace-catalog.describe-entity"
+          with:
+            catalog: "tools.catalog"
+            entityId: "tools.entityId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: list-change-sets
+          description: "List change sets for tracking publishing and update operations on marketplace entities."
+          hints:
+            readOnly: true
+          call: "marketplace-catalog.list-change-sets"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: describe-change-set
+          description: "Get the status and details of a specific marketplace change set."
+          hints:
+            readOnly: true
+          call: "marketplace-catalog.describe-change-set"
+          with:
+            catalog: "tools.catalog"
+            changeSetId: "tools.changeSetId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: start-change-set
+          description: "Initiate a change set to publish a new product or update an existing marketplace listing."
+          hints:
+            readOnly: false
+          call: "marketplace-catalog.start-change-set"
+          with:
+            catalog: "tools.catalog"
+            changeSet: "tools.changeSet"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: cancel-change-set
+          description: "Cancel an active change set that has not yet completed."
+          hints:
+            readOnly: false
+            destructive: false
+          call: "marketplace-catalog.cancel-change-set"
+          with:
+            catalog: "tools.catalog"
+            changeSetId: "tools.changeSetId"
+          outputParameters:
+            - type: object
+              mapping: "$."
+        - name: get-resource-policy
+          description: "Retrieve the resource-based policy attached to a marketplace entity."
+          hints:
+            readOnly: true
+          call: "marketplace-catalog.get-resource-policy"
+          with:
+            resourceArn: "tools.resourceArn"
+          outputParameters:
+            - type: object
+              mapping: "$."

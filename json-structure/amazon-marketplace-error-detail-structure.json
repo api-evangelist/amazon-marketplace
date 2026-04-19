@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-error-detail-structure.json",
+  "name": "ErrorDetail",
+  "description": "Details about the error.",
+  "type": "object",
+  "properties": {
+    "ErrorCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorCodeString"
+        },
+        {
+          "description": "The error code that identifies the type of error."
+        }
+      ]
+    },
+    "ErrorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExceptionMessageContent"
+        },
+        {
+          "description": "The message for the error."
+        }
+      ]
+    }
+  }
+}

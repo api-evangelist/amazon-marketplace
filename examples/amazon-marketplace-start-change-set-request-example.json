@@ -1,0 +1,7 @@
+{
+  "Catalog": "example-value",
+  "ChangeSet": "example-value",
+  "ChangeSetName": "my-resource",
+  "ClientRequestToken": "example-value",
+  "ChangeSetTags": "example-value"
+}

@@ -1,0 +1,8 @@
+{
+  "Name": "my-resource",
+  "EntityType": "example-value",
+  "EntityId": "abc12345",
+  "EntityArn": "arn:aws:service:us-east-1:123456789012:resource/id",
+  "LastModifiedDate": "example-value",
+  "Visibility": "example-value"
+}

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-change-summary-structure.json",
+  "name": "ChangeSummary",
+  "description": "This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.",
+  "type": "object",
+  "properties": {
+    "ChangeType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeType"
+        },
+        {
+          "description": "The type of the change."
+        }
+      ]
+    },
+    "Entity": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Entity"
+        },
+        {
+          "description": "The entity to be changed."
+        }
+      ]
+    },
+    "Details": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Json"
+        },
+        {
+          "description": "This object contains details specific to the change type of the requested change."
+        }
+      ]
+    },
+    "ErrorDetailList": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorDetailList"
+        },
+        {
+          "description": "An array of <code>ErrorDetail</code> objects associated with the change."
+        }
+      ]
+    },
+    "ChangeName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ChangeName"
+        },
+        {
+          "description": "Optional name for the change."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-next-token-schema.json",
+  "title": "NextToken",
+  "description": "NextToken schema from Amazon Marketplace API",
+  "type": "string",
+  "pattern": "^[\\w+=.:@\\-\\/]$"
+}

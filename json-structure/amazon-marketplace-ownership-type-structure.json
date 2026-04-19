@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-structure/amazon-marketplace-ownership-type-structure.json",
+  "name": "OwnershipType",
+  "description": "OwnershipType schema from Amazon Marketplace API",
+  "type": "string",
+  "enum": [
+    "SELF",
+    "SHARED"
+  ]
+}

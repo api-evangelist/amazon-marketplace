@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-list-tags-for-resource-request-schema.json",
+  "title": "ListTagsForResourceRequest",
+  "description": "ListTagsForResourceRequest schema from Amazon Marketplace API",
+  "type": "object",
+  "properties": {
+    "ResourceArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceARN"
+        },
+        {
+          "description": "Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ResourceArn"
+  ]
+}

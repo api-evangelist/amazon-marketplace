@@ -1,0 +1,206 @@
+vocabulary: "1.0.0"
+
+info:
+  provider: "Amazon Marketplace"
+  description: "Unified vocabulary for the AWS Marketplace Catalog API covering entities, change sets, resource policies, and tagging operations."
+  created: "2026-04-19"
+  modified: "2026-04-19"
+
+operational:
+  apis:
+    - namespace: marketplace-catalog
+      version: "2018-09-17"
+      baseUrl: https://catalog.marketplace.us-east-1.amazonaws.com
+      status: active
+
+  resources:
+    - name: entities
+      description: "Marketplace entities including software products, data products, and offers."
+      apis:
+        - marketplace-catalog
+      actions: [list, describe]
+    - name: change-sets
+      description: "Change sets for publishing and updating marketplace entities."
+      apis:
+        - marketplace-catalog
+      actions: [list, describe, start, cancel]
+    - name: resource-policies
+      description: "Resource-based policies for controlling access to marketplace entities."
+      apis:
+        - marketplace-catalog
+      actions: [get, put, delete]
+    - name: tags
+      description: "Tags for organizing and managing marketplace resources."
+      apis:
+        - marketplace-catalog
+      actions: [list, add, remove]
+
+  actions:
+    - name: list
+      description: "Retrieve a collection of resources."
+      httpMethod: POST
+      pattern: read
+    - name: describe
+      description: "Get detailed information about a specific resource."
+      httpMethod: GET
+      pattern: read
+    - name: start
+      description: "Initiate a new operation or workflow."
+      httpMethod: POST
+      pattern: write
+    - name: cancel
+      description: "Stop or abort an in-progress operation."
+      httpMethod: PATCH
+      pattern: write
+    - name: get
+      description: "Retrieve a specific resource or policy."
+      httpMethod: GET
+      pattern: read
+    - name: put
+      description: "Create or replace a resource or policy."
+      httpMethod: POST
+      pattern: write
+    - name: delete
+      description: "Remove a resource or policy."
+      httpMethod: DELETE
+      pattern: destructive
+
+  schemas:
+    core:
+      - name: Entity
+        description: "A marketplace entity such as a software product or offer."
+        properties: [entityId, entityType, entityArn, lastModifiedDate, visibility]
+      - name: ChangeSet
+        description: "A change set representing a publishing or update operation."
+        properties: [changeSetId, changeSetName, catalogId, startTime, endTime, status, changeSet]
+    supporting:
+      - name: ResourcePolicy
+        description: "A resource-based policy attached to a marketplace entity."
+        properties: [resourceArn, policy]
+      - name: Tag
+        description: "A key-value tag for organizing marketplace resources."
+        properties: [key, value]
+
+  parameters:
+    identifiers:
+      - name: entityId
+        description: "Unique identifier for a marketplace entity."
+      - name: changeSetId
+        description: "Unique identifier for a change set."
+      - name: resourceArn
+        description: "Amazon Resource Name for a marketplace resource."
+    filters:
+      - name: catalog
+        description: "The catalog identifier (AWSMarketplace)."
+      - name: entityType
+        description: "Filter entities by type (SaaSProduct, AmiProduct, DataProduct, etc.)."
+
+  enums:
+    entity-types:
+      - SaaSProduct
+      - AmiProduct
+      - ContainerProduct
+      - DataProduct
+      - MachinelearningProduct
+      - Offer
+    change-set-status:
+      - PREPARING
+      - APPLYING
+      - SUCCEEDED
+      - CANCELLED
+      - FAILED
+
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        description: "AWS SigV4 signing for all API requests."
+        apis:
+          - marketplace-catalog
+
+capability:
+  workflows:
+    - name: Marketplace Catalog Management
+      file: capabilities/marketplace-catalog-workflow.yaml
+      description: "Workflow for ISV sellers to publish, update, and manage products on AWS Marketplace."
+      apisComposed:
+        - marketplace-catalog
+      toolCount: 7
+      personas:
+        - ISV Seller
+        - Marketplace Operator
+
+  personas:
+    - id: isv-seller
+      name: ISV Seller
+      description: "Independent software vendor publishing and managing products on AWS Marketplace."
+      workflows:
+        - Marketplace Catalog Management
+    - id: marketplace-operator
+      name: Marketplace Operator
+      description: "Platform operator managing marketplace listings, policies, and change sets at scale."
+      workflows:
+        - Marketplace Catalog Management
+
+  domains:
+    - name: Product Publishing
+      description: "Publishing and updating software products and offers on AWS Marketplace."
+      resources: [entities, change-sets]
+    - name: Access Control
+      description: "Managing resource policies for marketplace entities."
+      resources: [resource-policies]
+
+  namespaces:
+    - name: marketplace-catalog
+      type: consumed
+      description: "AWS Marketplace Catalog API"
+    - name: marketplace-workflow-api
+      type: rest-exposed
+      port: 8080
+    - name: marketplace-workflow-mcp
+      type: mcp-exposed
+      port: 9090
+
+  binds:
+    - name: AWS_ACCESS_KEY_ID
+      description: "AWS access key for Marketplace Catalog API authentication."
+      workflows:
+        - Marketplace Catalog Management
+    - name: AWS_SECRET_ACCESS_KEY
+      description: "AWS secret key for Marketplace Catalog API authentication."
+      workflows:
+        - Marketplace Catalog Management
+    - name: AWS_REGION
+      description: "AWS region for Marketplace Catalog API endpoint."
+      workflows:
+        - Marketplace Catalog Management
+
+crossReference:
+  - resource: entities
+    operations:
+      - ListEntities
+      - DescribeEntity
+    workflows:
+      - Marketplace Catalog Management
+    personas:
+      - ISV Seller
+      - Marketplace Operator
+  - resource: change-sets
+    operations:
+      - ListChangeSets
+      - DescribeChangeSet
+      - StartChangeSet
+      - CancelChangeSet
+    workflows:
+      - Marketplace Catalog Management
+    personas:
+      - ISV Seller
+      - Marketplace Operator
+  - resource: resource-policies
+    operations:
+      - GetResourcePolicy
+      - PutResourcePolicy
+      - DeleteResourcePolicy
+    workflows:
+      - Marketplace Catalog Management
+    personas:
+      - Marketplace Operator

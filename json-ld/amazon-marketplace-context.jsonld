@@ -1,0 +1,173 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "amkt": "https://amkt.amazonaws.com/schema/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "CancelChangeSetRequest": "amkt:CancelChangeSetRequest",
+    "CancelChangeSetResponse": "amkt:CancelChangeSetResponse",
+    "Change": "amkt:Change",
+    "ChangeSetSummaryListItem": "amkt:ChangeSetSummaryListItem",
+    "ChangeSummary": "amkt:ChangeSummary",
+    "DeleteResourcePolicyRequest": "amkt:DeleteResourcePolicyRequest",
+    "DeleteResourcePolicyResponse": "amkt:DeleteResourcePolicyResponse",
+    "DescribeChangeSetRequest": "amkt:DescribeChangeSetRequest",
+    "DescribeChangeSetResponse": "amkt:DescribeChangeSetResponse",
+    "DescribeEntityRequest": "amkt:DescribeEntityRequest",
+    "DescribeEntityResponse": "amkt:DescribeEntityResponse",
+    "Entity": "amkt:Entity",
+    "EntitySummary": "amkt:EntitySummary",
+    "ErrorDetail": "amkt:ErrorDetail",
+    "Filter": "amkt:Filter",
+    "GetResourcePolicyRequest": "amkt:GetResourcePolicyRequest",
+    "GetResourcePolicyResponse": "amkt:GetResourcePolicyResponse",
+    "ListChangeSetsRequest": "amkt:ListChangeSetsRequest",
+    "ListChangeSetsResponse": "amkt:ListChangeSetsResponse",
+    "ListEntitiesRequest": "amkt:ListEntitiesRequest",
+    "ListEntitiesResponse": "amkt:ListEntitiesResponse",
+    "ListTagsForResourceRequest": "amkt:ListTagsForResourceRequest",
+    "ListTagsForResourceResponse": "amkt:ListTagsForResourceResponse",
+    "PutResourcePolicyRequest": "amkt:PutResourcePolicyRequest",
+    "PutResourcePolicyResponse": "amkt:PutResourcePolicyResponse",
+    "Sort": "amkt:Sort",
+    "StartChangeSetRequest": "amkt:StartChangeSetRequest",
+    "StartChangeSetResponse": "amkt:StartChangeSetResponse",
+    "Tag": "amkt:Tag",
+    "TagResourceRequest": "amkt:TagResourceRequest",
+    "TagResourceResponse": "amkt:TagResourceResponse",
+    "UntagResourceRequest": "amkt:UntagResourceRequest",
+    "UntagResourceResponse": "amkt:UntagResourceResponse",
+    "Catalog": {
+      "@id": "amkt:Catalog"
+    },
+    "ChangeName": {
+      "@id": "amkt:ChangeName"
+    },
+    "ChangeSet": {
+      "@id": "amkt:ChangeSet"
+    },
+    "ChangeSetArn": {
+      "@id": "amkt:ChangeSetArn"
+    },
+    "ChangeSetId": {
+      "@id": "amkt:ChangeSetId"
+    },
+    "ChangeSetName": {
+      "@id": "amkt:ChangeSetName"
+    },
+    "ChangeSetSummaryList": {
+      "@id": "amkt:ChangeSetSummaryList"
+    },
+    "ChangeSetTags": {
+      "@id": "amkt:ChangeSetTags"
+    },
+    "ChangeType": {
+      "@id": "amkt:ChangeType"
+    },
+    "ClientRequestToken": {
+      "@id": "amkt:ClientRequestToken"
+    },
+    "Details": {
+      "@id": "amkt:Details"
+    },
+    "EndTime": {
+      "@id": "amkt:EndTime"
+    },
+    "EntityArn": {
+      "@id": "amkt:EntityArn"
+    },
+    "EntityId": {
+      "@id": "amkt:EntityId"
+    },
+    "EntityIdList": {
+      "@id": "amkt:EntityIdList"
+    },
+    "EntityIdentifier": {
+      "@id": "amkt:EntityIdentifier"
+    },
+    "EntitySummaryList": {
+      "@id": "amkt:EntitySummaryList"
+    },
+    "EntityTags": {
+      "@id": "amkt:EntityTags"
+    },
+    "EntityType": {
+      "@id": "amkt:EntityType"
+    },
+    "ErrorCode": {
+      "@id": "amkt:ErrorCode"
+    },
+    "ErrorDetailList": {
+      "@id": "amkt:ErrorDetailList"
+    },
+    "ErrorMessage": {
+      "@id": "amkt:ErrorMessage"
+    },
+    "FailureCode": {
+      "@id": "amkt:FailureCode"
+    },
+    "FailureDescription": {
+      "@id": "amkt:FailureDescription"
+    },
+    "FilterList": {
+      "@id": "amkt:FilterList"
+    },
+    "Identifier": {
+      "@id": "amkt:Identifier"
+    },
+    "Key": {
+      "@id": "amkt:Key"
+    },
+    "LastModifiedDate": {
+      "@id": "amkt:LastModifiedDate"
+    },
+    "MaxResults": {
+      "@id": "amkt:MaxResults"
+    },
+    "Name": {
+      "@id": "amkt:Name"
+    },
+    "NextToken": {
+      "@id": "amkt:NextToken"
+    },
+    "OwnershipType": {
+      "@id": "amkt:OwnershipType"
+    },
+    "Policy": {
+      "@id": "amkt:Policy"
+    },
+    "ResourceArn": {
+      "@id": "amkt:ResourceArn"
+    },
+    "SortBy": {
+      "@id": "amkt:SortBy"
+    },
+    "SortOrder": {
+      "@id": "amkt:SortOrder"
+    },
+    "StartTime": {
+      "@id": "amkt:StartTime"
+    },
+    "Status": {
+      "@id": "amkt:Status"
+    },
+    "TagKeys": {
+      "@id": "amkt:TagKeys"
+    },
+    "Tags": {
+      "@id": "amkt:Tags"
+    },
+    "Type": {
+      "@id": "amkt:Type"
+    },
+    "Value": {
+      "@id": "amkt:Value"
+    },
+    "ValueList": {
+      "@id": "amkt:ValueList"
+    },
+    "Visibility": {
+      "@id": "amkt:Visibility"
+    }
+  }
+}

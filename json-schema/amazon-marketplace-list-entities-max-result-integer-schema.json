@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/json-schema/amazon-marketplace-list-entities-max-result-integer-schema.json",
+  "title": "ListEntitiesMaxResultInteger",
+  "description": "ListEntitiesMaxResultInteger schema from Amazon Marketplace API",
+  "type": "integer",
+  "minimum": 1,
+  "maximum": 50
+}
