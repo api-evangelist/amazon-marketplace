@@ -4,10 +4,10 @@
     {
       "source": "https://aws.amazon.com/blogs/awsmarketplace/",
       "feed_url": "https://aws.amazon.com/blogs/awsmarketplace/feed/",
-      "saved": 10,
-      "title": "AWS Marketplace"
+      "title": "AWS Marketplace",
+      "saved": 2
     }
   ],
-  "post_count": 10,
-  "fetched": "2026-05-03T23:21:35Z"
+  "post_count": 12,
+  "fetched": "2026-05-09T20:17:51Z"
 }
