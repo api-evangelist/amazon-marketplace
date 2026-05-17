@@ -51,7 +51,7 @@ apis:
         url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
       - type: JSONStructure
         url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
-      - type: JSON-LD
+      - type: JSONLD
         url: json-ld/amazon-marketplace-context.jsonld
 common:
   - type: Portal
