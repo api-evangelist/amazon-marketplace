@@ -49,6 +49,14 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-marketplace.yaml
 common:
+- type: TrustCenter
+  url: security/amazon-marketplace-trust-center.yml
+- type: VulnerabilityDisclosure
+  url: security/amazon-marketplace-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/amazon-marketplace-domain-security.yml
+- type: Authentication
+  url: authentication/amazon-marketplace-authentication.yml
 - type: Portal
   url: https://aws.amazon.com/marketplace/
 - type: Documentation
