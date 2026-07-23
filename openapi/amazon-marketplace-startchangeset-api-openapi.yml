@@ -1,0 +1,405 @@
+openapi: 3.0.0
+info:
+  version: '2018-09-17'
+  x-release: v4
+  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId StartChangeSet API
+  description: <p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: marketplace-catalog
+  x-aws-signingName: aws-marketplace
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/marketplace-catalog-2018-09-17.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://catalog.marketplace.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Marketplace Catalog multi-region endpoint
+- url: https://catalog.marketplace.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The AWS Marketplace Catalog multi-region endpoint
+- url: http://catalog.marketplace.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Marketplace Catalog endpoint for China (Beijing) and China (Ningxia)
+- url: https://catalog.marketplace.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The AWS Marketplace Catalog endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: StartChangeSet
+paths:
+  /StartChangeSet:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: StartChangeSet
+      description: <p>Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code> error.</p> <p>For example, you can't start the <code>ChangeSet</code> described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).</p> <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"> Working with change sets</a>. For information on change types for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Als, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StartChangeSetResponse'
+        '480':
+          description: InternalServiceException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServiceException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '483':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '484':
+          description: ResourceInUseException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceInUseException'
+        '485':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '486':
+          description: ServiceQuotaExceededException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ServiceQuotaExceededException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - Catalog
+              - ChangeSet
+              properties:
+                Catalog:
+                  description: 'The catalog related to the request. Fixed value: <code>AWSMarketplace</code> '
+                  type: string
+                  pattern: ^[a-zA-Z]+$
+                  minLength: 1
+                  maxLength: 64
+                ChangeSet:
+                  description: Array of <code>change</code> object.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Change'
+                  minItems: 1
+                  maxItems: 20
+                ChangeSetName:
+                  description: 'Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. '
+                  type: string
+                  pattern: ^[\w\s+=.:@-]+$
+                  minLength: 1
+                  maxLength: 100
+                ClientRequestToken:
+                  description: A unique token to identify the request to ensure idempotency.
+                  type: string
+                  pattern: ^[!-~]+$
+                  minLength: 1
+                  maxLength: 64
+                ChangeSetTags:
+                  description: A list of objects specifying each key name and value for the <code>ChangeSetTags</code> property.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/Tag'
+                  minItems: 1
+                  maxItems: 200
+      summary: Amazon Marketplace Start Change Set
+      tags:
+      - StartChangeSet
+components:
+  schemas:
+    Json:
+      type: string
+      pattern: ^[\s]*\{[\s\S]*\}[\s]*$
+      minLength: 2
+      maxLength: 16384
+    ResourceNotFoundException: {}
+    TagKey:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 1
+      maxLength: 128
+    ThrottlingException: {}
+    ResourceInUseException: {}
+    ResourceId:
+      type: string
+      pattern: ^[\w\-]+$
+      minLength: 1
+      maxLength: 255
+    Entity:
+      type: object
+      required:
+      - Type
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/EntityType'
+          - description: The type of entity.
+        Identifier:
+          allOf:
+          - $ref: '#/components/schemas/Identifier'
+          - description: The identifier for the entity.
+      description: 'An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. '
+    AccessDeniedException: {}
+    StartChangeSetResponse:
+      type: object
+      properties:
+        ChangeSetId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: Unique identifier generated for the request.
+        ChangeSetArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The ARN associated to the unique identifier generated for the request.
+    Change:
+      type: object
+      required:
+      - ChangeType
+      - Entity
+      - Details
+      properties:
+        ChangeType:
+          allOf:
+          - $ref: '#/components/schemas/ChangeType'
+          - description: Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.
+        Entity:
+          allOf:
+          - $ref: '#/components/schemas/Entity'
+          - description: The entity to be changed.
+        EntityTags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: The tags associated with the change.
+        Details:
+          allOf:
+          - $ref: '#/components/schemas/Json'
+          - description: This object contains details specific to the change type of the requested change. For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Also, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.
+        ChangeName:
+          allOf:
+          - $ref: '#/components/schemas/ChangeName'
+          - description: Optional name for the change.
+      description: An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.
+    EntityType:
+      type: string
+      pattern: ^[a-zA-Z]+$
+      minLength: 1
+      maxLength: 255
+    ValidationException: {}
+    Tag:
+      type: object
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The key associated with the tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The value associated with the tag.
+      description: A list of objects specifying each key name and value.
+    InternalServiceException: {}
+    TagValue:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 0
+      maxLength: 256
+    ServiceQuotaExceededException: {}
+    ChangeType:
+      type: string
+      pattern: ^[A-Z][\w]*$
+      minLength: 1
+      maxLength: 255
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      minItems: 1
+      maxItems: 200
+    Identifier:
+      type: string
+      pattern: ^[\w\-@]+$
+      minLength: 1
+      maxLength: 255
+    ChangeName:
+      type: string
+      pattern: ^[a-zA-Z]$
+      minLength: 1
+      maxLength: 72
+    ARN:
+      type: string
+      pattern: ^[a-zA-Z0-9:*/-]+$
+      minLength: 1
+      maxLength: 2048
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/marketplace/
