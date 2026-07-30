@@ -5,7 +5,20 @@ description: AWS Marketplace is a curated digital catalog that makes it easy to 
   The Marketplace Catalog API enables programmatic management of marketplace entities including products, offers, and data
   products through change sets and entity description operations.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-marketplace.png
 tags:
 - AWS
 - Commerce
@@ -17,23 +30,311 @@ created: '2026-03-16'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-- aid: amazon-marketplace:aws-marketplace-catalog-api
-  name: AWS Marketplace Catalog API
-  description: The AWS Marketplace Catalog API provides programmatic access to manage entities and change sets for publishing
-    and updating software products, data products, and machine learning products on AWS Marketplace. Covers 13 operations
-    for entity discovery, change set lifecycle management, resource policies, and resource tagging.
+- aid: amazon-marketplace:amazon-marketplace-cancelchangeset-catalog-changesetid-api
+  name: Amazon Marketplace CancelChangeSet#catalog&changeSetId API
+  description: >-
+    The CancelChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for cancelchangeset#catalog&changesetid.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
-  - Commerce
-  - ISV
-  - Marketplace
-  - Software Catalog
+  - CancelChangeSet#catalog&changeSetId
   properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-cancelchangeset-catalog-changesetid-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-deleteresourcepolicy-resourcearn-api
+  name: Amazon Marketplace DeleteResourcePolicy#resourceArn API
+  description: >-
+    The DeleteResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for deleteresourcepolicy#resourcearn.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - DeleteResourcePolicy#resourceArn
+  properties:
   - type: OpenAPI
-    url: openapi/amazon-marketplace-openapi-original.yaml
+    url: openapi/amazon-marketplace-deleteresourcepolicy-resourcearn-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-describechangeset-catalog-changesetid-api
+  name: Amazon Marketplace DescribeChangeSet#catalog&changeSetId API
+  description: >-
+    The DescribeChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for describechangeset#catalog&changesetid.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - DescribeChangeSet#catalog&changeSetId
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-describechangeset-catalog-changesetid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-describeentity-catalog-entityid-api
+  name: Amazon Marketplace DescribeEntity#catalog&entityId API
+  description: >-
+    The DescribeEntity#catalog&entityId API from Amazon Marketplace — 1 operation(s) for describeentity#catalog&entityid.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - DescribeEntity#catalog&entityId
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-describeentity-catalog-entityid-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-getresourcepolicy-resourcearn-api
+  name: Amazon Marketplace GetResourcePolicy#resourceArn API
+  description: >-
+    The GetResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for getresourcepolicy#resourcearn.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - GetResourcePolicy#resourceArn
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-getresourcepolicy-resourcearn-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-listchangesets-api
+  name: Amazon Marketplace ListChangeSets API
+  description: The ListChangeSets API from Amazon Marketplace — 1 operation(s) for listchangesets.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - ListChangeSets
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-listchangesets-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-listentities-api
+  name: Amazon Marketplace ListEntities API
+  description: The ListEntities API from Amazon Marketplace — 1 operation(s) for listentities.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - ListEntities
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-listentities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-listtagsforresource-api
+  name: Amazon Marketplace ListTagsForResource API
+  description: >-
+    The ListTagsForResource API from Amazon Marketplace — 1 operation(s) for listtagsforresource.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - ListTagsForResource
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-listtagsforresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-putresourcepolicy-api
+  name: Amazon Marketplace PutResourcePolicy API
+  description: >-
+    The PutResourcePolicy API from Amazon Marketplace — 1 operation(s) for putresourcepolicy.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - PutResourcePolicy
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-putresourcepolicy-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-startchangeset-api
+  name: Amazon Marketplace StartChangeSet API
+  description: The StartChangeSet API from Amazon Marketplace — 1 operation(s) for startchangeset.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - StartChangeSet
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-startchangeset-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-tagresource-api
+  name: Amazon Marketplace TagResource API
+  description: The TagResource API from Amazon Marketplace — 1 operation(s) for tagresource.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - TagResource
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-tagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+  - type: X-NaftikoCapability
+    url: capabilities/amazon-marketplace.yaml
+- aid: amazon-marketplace:amazon-marketplace-untagresource-api
+  name: Amazon Marketplace UntagResource API
+  description: The UntagResource API from Amazon Marketplace — 1 operation(s) for untagresource.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - UntagResource
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-untagresource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
   - type: GettingStarted
     url: https://aws.amazon.com/marketplace/management/portal/
   - type: Pricing
@@ -49,6 +350,8 @@ apis:
   - type: X-NaftikoCapability
     url: capabilities/amazon-marketplace.yaml
 common:
+- type: PostmanWorkspace
+  url: https://www.postman.com/kinlaneapi/amazon-marketplace/overview
 - type: AgenticAccess
   url: agentic-access/amazon-marketplace-agentic-access.yml
 - type: TrustCenter
