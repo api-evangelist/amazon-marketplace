@@ -1,0 +1,704 @@
+{
+  "info": {
+    "_postman_id": "2921aa30-53b2-4c56-8f58-c8c37a1b1b1b",
+    "name": "AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId ListEntities API",
+    "description": "<p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:37:47.000Z",
+    "updatedAt": "2026-07-28T10:37:47.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-2921aa30-53b2-4c56-8f58-c8c37a1b1b1b"
+  },
+  "item": [
+    {
+      "name": "ListEntities",
+      "item": [
+        {
+          "name": "Amazon Marketplace List Entities",
+          "id": "105ef1bd-1fe5-489a-9b4a-e10e6f0537cb",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Catalog\": \"dbHZDXR\",\n  \"EntityType\": \"uXmbAeNm\",\n  \"FilterList\": [\n    {\n      \"Name\": \"MaGCKDwrC\",\n      \"ValueList\": [\n        \"#(Fndfh;yd\"\n      ]\n    }\n  ],\n  \"Sort\": {\n    \"SortBy\": \"vxkzYGZoq\",\n    \"SortOrder\": \"ASCENDING\"\n  },\n  \"NextToken\": \":\",\n  \"MaxResults\": \"<integer>\",\n  \"OwnershipType\": \"SELF\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/ListEntities?MaxResults=<string>&NextToken=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "ListEntities"
+              ],
+              "query": [
+                {
+                  "description": "Pagination limit",
+                  "key": "MaxResults",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Pagination token",
+                  "key": "NextToken",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Provides the list of entities of a given type."
+          },
+          "response": [
+            {
+              "id": "c5e10be5-a051-4681-9176-aac7460e94d7",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"dbHZDXR\",\n  \"EntityType\": \"uXmbAeNm\",\n  \"FilterList\": [\n    {\n      \"Name\": \"MaGCKDwrC\",\n      \"ValueList\": [\n        \"#(Fndfh;yd\"\n      ]\n    }\n  ],\n  \"Sort\": {\n    \"SortBy\": \"vxkzYGZoq\",\n    \"SortOrder\": \"ASCENDING\"\n  },\n  \"NextToken\": \":\",\n  \"MaxResults\": \"<integer>\",\n  \"OwnershipType\": \"SELF\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ListEntities?MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ListEntities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"EntitySummaryList\": [\n    {\n      \"Name\": \"\\\\SSSSSSS\\\\sSSsS\\\\\\\\\\\\\",\n      \"EntityType\": \"jUAmoyQyoC\",\n      \"EntityId\": \"P3vi\",\n      \"EntityArn\": \"2\",\n      \"LastModifiedDate\": \"5107-12-11T17:59:49Z\",\n      \"Visibility\": \"XL\"\n    },\n    {\n      \"Name\": \"\\\\SSSSSSSSSS\\\\\\\\\",\n      \"EntityType\": \"rMXjpLSNuET\",\n      \"EntityId\": \"-8\",\n      \"EntityArn\": \"5a5jpkhpn\",\n      \"LastModifiedDate\": \"7453-04-06T16:34:11Z\",\n      \"Visibility\": \"ykAGryOfR\"\n    }\n  ],\n  \"NextToken\": \"/\"\n}",
+              "createdAt": "2026-07-28T10:37:47.000Z",
+              "updatedAt": "2026-07-28T10:37:47.000Z",
+              "uid": "35240-c5e10be5-a051-4681-9176-aac7460e94d7"
+            },
+            {
+              "id": "4a4ac3ce-6144-407b-9138-9d29d41cd3ab",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"dbHZDXR\",\n  \"EntityType\": \"uXmbAeNm\",\n  \"FilterList\": [\n    {\n      \"Name\": \"MaGCKDwrC\",\n      \"ValueList\": [\n        \"#(Fndfh;yd\"\n      ]\n    }\n  ],\n  \"Sort\": {\n    \"SortBy\": \"vxkzYGZoq\",\n    \"SortOrder\": \"ASCENDING\"\n  },\n  \"NextToken\": \":\",\n  \"MaxResults\": \"<integer>\",\n  \"OwnershipType\": \"SELF\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ListEntities?MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ListEntities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:47.000Z",
+              "updatedAt": "2026-07-28T10:37:47.000Z",
+              "uid": "35240-4a4ac3ce-6144-407b-9138-9d29d41cd3ab"
+            },
+            {
+              "id": "73d0c58b-1085-4f68-897f-08b34c4ad72c",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"dbHZDXR\",\n  \"EntityType\": \"uXmbAeNm\",\n  \"FilterList\": [\n    {\n      \"Name\": \"MaGCKDwrC\",\n      \"ValueList\": [\n        \"#(Fndfh;yd\"\n      ]\n    }\n  ],\n  \"Sort\": {\n    \"SortBy\": \"vxkzYGZoq\",\n    \"SortOrder\": \"ASCENDING\"\n  },\n  \"NextToken\": \":\",\n  \"MaxResults\": \"<integer>\",\n  \"OwnershipType\": \"SELF\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ListEntities?MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ListEntities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:47.000Z",
+              "updatedAt": "2026-07-28T10:37:47.000Z",
+              "uid": "35240-73d0c58b-1085-4f68-897f-08b34c4ad72c"
+            },
+            {
+              "id": "5af3d38c-da4d-49db-b994-fad90fd1a3cd",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"dbHZDXR\",\n  \"EntityType\": \"uXmbAeNm\",\n  \"FilterList\": [\n    {\n      \"Name\": \"MaGCKDwrC\",\n      \"ValueList\": [\n        \"#(Fndfh;yd\"\n      ]\n    }\n  ],\n  \"Sort\": {\n    \"SortBy\": \"vxkzYGZoq\",\n    \"SortOrder\": \"ASCENDING\"\n  },\n  \"NextToken\": \":\",\n  \"MaxResults\": \"<integer>\",\n  \"OwnershipType\": \"SELF\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ListEntities?MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ListEntities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:47.000Z",
+              "updatedAt": "2026-07-28T10:37:47.000Z",
+              "uid": "35240-5af3d38c-da4d-49db-b994-fad90fd1a3cd"
+            },
+            {
+              "id": "c1406df7-8d95-4fde-a010-769fcd0b683f",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"dbHZDXR\",\n  \"EntityType\": \"uXmbAeNm\",\n  \"FilterList\": [\n    {\n      \"Name\": \"MaGCKDwrC\",\n      \"ValueList\": [\n        \"#(Fndfh;yd\"\n      ]\n    }\n  ],\n  \"Sort\": {\n    \"SortBy\": \"vxkzYGZoq\",\n    \"SortOrder\": \"ASCENDING\"\n  },\n  \"NextToken\": \":\",\n  \"MaxResults\": \"<integer>\",\n  \"OwnershipType\": \"SELF\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ListEntities?MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ListEntities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:47.000Z",
+              "updatedAt": "2026-07-28T10:37:47.000Z",
+              "uid": "35240-c1406df7-8d95-4fde-a010-769fcd0b683f"
+            },
+            {
+              "id": "055bd555-26d8-45be-a5e5-97d7466aca2a",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"dbHZDXR\",\n  \"EntityType\": \"uXmbAeNm\",\n  \"FilterList\": [\n    {\n      \"Name\": \"MaGCKDwrC\",\n      \"ValueList\": [\n        \"#(Fndfh;yd\"\n      ]\n    }\n  ],\n  \"Sort\": {\n    \"SortBy\": \"vxkzYGZoq\",\n    \"SortOrder\": \"ASCENDING\"\n  },\n  \"NextToken\": \":\",\n  \"MaxResults\": \"<integer>\",\n  \"OwnershipType\": \"SELF\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/ListEntities?MaxResults=<string>&NextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "ListEntities"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "MaxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "NextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:47.000Z",
+              "updatedAt": "2026-07-28T10:37:47.000Z",
+              "uid": "35240-055bd555-26d8-45be-a5e5-97d7466aca2a"
+            }
+          ],
+          "createdAt": "2026-07-28T10:37:47.000Z",
+          "updatedAt": "2026-07-28T10:37:47.000Z",
+          "uid": "35240-105ef1bd-1fe5-489a-9b4a-e10e6f0537cb"
+        }
+      ],
+      "id": "f7946e6a-1245-4e70-be3e-7526be9c7ef4",
+      "createdAt": "2026-07-28T10:37:47.000Z",
+      "updatedAt": "2026-07-28T10:37:47.000Z",
+      "uid": "35240-f7946e6a-1245-4e70-be3e-7526be9c7ef4"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://catalog.marketplace.{{region}}.amazonaws.com"
+    }
+  ]
+}

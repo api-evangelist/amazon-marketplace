@@ -1,0 +1,613 @@
+{
+  "info": {
+    "_postman_id": "95d4a94f-e883-4821-a26d-e0785503c983",
+    "name": "AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId DescribeChangeSet#catalog&changeSetId API",
+    "description": "<p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:37:42.000Z",
+    "updatedAt": "2026-07-28T10:37:43.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-95d4a94f-e883-4821-a26d-e0785503c983"
+  },
+  "item": [
+    {
+      "name": "DescribeChangeSet#catalog&changeSetId",
+      "item": [
+        {
+          "name": "Amazon Marketplace Describe Change Set",
+          "id": "19e56cc9-065d-4f49-bd35-8e00f6a72a1e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/DescribeChangeSet?catalog=OlXGhrRdj&changeSetId=Vs5dImnYU2a#catalog&changeSetId",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "DescribeChangeSet"
+              ],
+              "query": [
+                {
+                  "description": "(Required) Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> ",
+                  "key": "catalog",
+                  "value": "OlXGhrRdj"
+                },
+                {
+                  "description": "(Required) Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.",
+                  "key": "changeSetId",
+                  "value": "Vs5dImnYU2a"
+                }
+              ],
+              "hash": "catalog&changeSetId"
+            },
+            "description": "Provides information about a given change set."
+          },
+          "response": [
+            {
+              "id": "aea7df74-6a2c-4185-82f9-77caed593e83",
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeChangeSet?catalog=OlXGhrRdj&changeSetId=Vs5dImnYU2a#catalog&changeSetId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeChangeSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> ",
+                      "key": "catalog",
+                      "value": "OlXGhrRdj"
+                    },
+                    {
+                      "description": "(Required) Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.",
+                      "key": "changeSetId",
+                      "value": "Vs5dImnYU2a"
+                    }
+                  ],
+                  "hash": "catalog&changeSetId"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ChangeSetId\": \"iSFdwwQ\",\n  \"ChangeSetArn\": \"Ol5AJ\",\n  \"ChangeSetName\": \"\u205fxg95uW\",\n  \"StartTime\": \"3670-11-30T15:59:34Z\",\n  \"EndTime\": \"3652-11-30T21:54:34Z\",\n  \"Status\": \"FAILED\",\n  \"FailureCode\": \"CLIENT_ERROR\",\n  \"FailureDescription\": \"FS2$~Jt4*Yl\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"GR\",\n      \"Entity\": {\n        \"Type\": \"yzRhewaMOCn\",\n        \"Identifier\": \"aKhHT\"\n      },\n      \"Details\": \"\u2004{Wa^~?&.[\\rO}\\f\",\n      \"ErrorDetailList\": [\n        {\n          \"ErrorCode\": \"Q\",\n          \"ErrorMessage\": \"-(^!`-rQ\"\n        },\n        {\n          \"ErrorCode\": \"LygcY\",\n          \"ErrorMessage\": \"NV\\\\Y;/.OGN\"\n        }\n      ],\n      \"ChangeName\": \"K\"\n    },\n    {\n      \"ChangeType\": \"SQGi\",\n      \"Entity\": {\n        \"Type\": \"gOsbRC\",\n        \"Identifier\": \"ZCAu\"\n      },\n      \"Details\": \"\u2005\u2004\u202f \u2000\\u000b\u180e\u2029\u2003\u2003{}\\t\u2009\\u000b\u3000\u180e\u2005\u202f\u2002\u2002\",\n      \"ErrorDetailList\": [\n        {\n          \"ErrorCode\": \"byP\",\n          \"ErrorMessage\": \"cAGf4{/5'\"\n        },\n        {\n          \"ErrorCode\": \"VRjRAzLoob\",\n          \"ErrorMessage\": \"=~`PcT\"\n        }\n      ],\n      \"ChangeName\": \"S\"\n    }\n  ]\n}",
+              "createdAt": "2026-07-28T10:37:43.000Z",
+              "updatedAt": "2026-07-28T10:37:43.000Z",
+              "uid": "35240-aea7df74-6a2c-4185-82f9-77caed593e83"
+            },
+            {
+              "id": "c85ebb54-4be6-4e68-998e-f113f3a35f04",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeChangeSet?catalog=OlXGhrRdj&changeSetId=Vs5dImnYU2a#catalog&changeSetId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeChangeSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> ",
+                      "key": "catalog",
+                      "value": "OlXGhrRdj"
+                    },
+                    {
+                      "description": "(Required) Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.",
+                      "key": "changeSetId",
+                      "value": "Vs5dImnYU2a"
+                    }
+                  ],
+                  "hash": "catalog&changeSetId"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:43.000Z",
+              "updatedAt": "2026-07-28T10:37:43.000Z",
+              "uid": "35240-c85ebb54-4be6-4e68-998e-f113f3a35f04"
+            },
+            {
+              "id": "666e98c6-e493-4765-be61-d1639d4298b2",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeChangeSet?catalog=OlXGhrRdj&changeSetId=Vs5dImnYU2a#catalog&changeSetId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeChangeSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> ",
+                      "key": "catalog",
+                      "value": "OlXGhrRdj"
+                    },
+                    {
+                      "description": "(Required) Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.",
+                      "key": "changeSetId",
+                      "value": "Vs5dImnYU2a"
+                    }
+                  ],
+                  "hash": "catalog&changeSetId"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:43.000Z",
+              "updatedAt": "2026-07-28T10:37:43.000Z",
+              "uid": "35240-666e98c6-e493-4765-be61-d1639d4298b2"
+            },
+            {
+              "id": "5c162b97-ac0f-4c9b-96f6-12e8e8cef9d5",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeChangeSet?catalog=OlXGhrRdj&changeSetId=Vs5dImnYU2a#catalog&changeSetId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeChangeSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> ",
+                      "key": "catalog",
+                      "value": "OlXGhrRdj"
+                    },
+                    {
+                      "description": "(Required) Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.",
+                      "key": "changeSetId",
+                      "value": "Vs5dImnYU2a"
+                    }
+                  ],
+                  "hash": "catalog&changeSetId"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:43.000Z",
+              "updatedAt": "2026-07-28T10:37:43.000Z",
+              "uid": "35240-5c162b97-ac0f-4c9b-96f6-12e8e8cef9d5"
+            },
+            {
+              "id": "6c80f144-6389-4f07-82f3-b7a731728622",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeChangeSet?catalog=OlXGhrRdj&changeSetId=Vs5dImnYU2a#catalog&changeSetId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeChangeSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> ",
+                      "key": "catalog",
+                      "value": "OlXGhrRdj"
+                    },
+                    {
+                      "description": "(Required) Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.",
+                      "key": "changeSetId",
+                      "value": "Vs5dImnYU2a"
+                    }
+                  ],
+                  "hash": "catalog&changeSetId"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:43.000Z",
+              "updatedAt": "2026-07-28T10:37:43.000Z",
+              "uid": "35240-6c80f144-6389-4f07-82f3-b7a731728622"
+            },
+            {
+              "id": "59107c64-4752-40ed-af68-22155e78704e",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DescribeChangeSet?catalog=OlXGhrRdj&changeSetId=Vs5dImnYU2a#catalog&changeSetId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DescribeChangeSet"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> ",
+                      "key": "catalog",
+                      "value": "OlXGhrRdj"
+                    },
+                    {
+                      "description": "(Required) Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.",
+                      "key": "changeSetId",
+                      "value": "Vs5dImnYU2a"
+                    }
+                  ],
+                  "hash": "catalog&changeSetId"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:43.000Z",
+              "updatedAt": "2026-07-28T10:37:43.000Z",
+              "uid": "35240-59107c64-4752-40ed-af68-22155e78704e"
+            }
+          ],
+          "createdAt": "2026-07-28T10:37:43.000Z",
+          "updatedAt": "2026-07-28T10:37:43.000Z",
+          "uid": "35240-19e56cc9-065d-4f49-bd35-8e00f6a72a1e"
+        }
+      ],
+      "id": "ed45b306-df6d-4a82-8667-bb6785dcd361",
+      "createdAt": "2026-07-28T10:37:43.000Z",
+      "updatedAt": "2026-07-28T10:37:43.000Z",
+      "uid": "35240-ed45b306-df6d-4a82-8667-bb6785dcd361"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://catalog.marketplace.{{region}}.amazonaws.com"
+    }
+  ]
+}

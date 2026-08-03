@@ -1,0 +1,784 @@
+{
+  "info": {
+    "_postman_id": "8faab7d5-8035-40b6-ab5a-a63398a5b102",
+    "name": "AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId StartChangeSet API",
+    "description": "<p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:37:51.000Z",
+    "updatedAt": "2026-07-28T10:37:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8faab7d5-8035-40b6-ab5a-a63398a5b102"
+  },
+  "item": [
+    {
+      "name": "StartChangeSet",
+      "item": [
+        {
+          "name": "Amazon Marketplace Start Change Set",
+          "id": "dea628fe-628d-4f3d-816e-683ce5f1cbde",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/StartChangeSet",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "StartChangeSet"
+              ]
+            },
+            "description": "<p>Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code> error.</p> <p>For example, you can't start the <code>ChangeSet</code> described in the <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples\">example</a> later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).</p> <p>For more information about working with change sets, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets\"> Working with change sets</a>. For information on change types for single-AMI products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products\">Working with single-AMI products</a>. Als, for more information on change types available for container-based products, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products\">Working with container products</a>.</p>"
+          },
+          "response": [
+            {
+              "id": "0af0507e-2ecf-4f31-b22c-612675bfdfb6",
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"ChangeSetId\": \"OGpr\",\n  \"ChangeSetArn\": \"h0GYcwS\"\n}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-0af0507e-2ecf-4f31-b22c-612675bfdfb6"
+            },
+            {
+              "id": "dd2b71a1-b8de-4cb7-a3e0-3cf8651d09f0",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-dd2b71a1-b8de-4cb7-a3e0-3cf8651d09f0"
+            },
+            {
+              "id": "3794dd62-6006-456a-9666-0eb256df0ce5",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-3794dd62-6006-456a-9666-0eb256df0ce5"
+            },
+            {
+              "id": "ab6fa07a-71cc-47ed-b8ce-d17c6f26997c",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-ab6fa07a-71cc-47ed-b8ce-d17c6f26997c"
+            },
+            {
+              "id": "0fd3a41d-0caa-4506-8833-466f8251e44c",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-0fd3a41d-0caa-4506-8833-466f8251e44c"
+            },
+            {
+              "id": "d15f0fae-83e6-4617-9c5e-c94289124eed",
+              "name": "ResourceInUseException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-d15f0fae-83e6-4617-9c5e-c94289124eed"
+            },
+            {
+              "id": "4ef6d582-b852-4750-8771-f59fb55e8417",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-4ef6d582-b852-4750-8771-f59fb55e8417"
+            },
+            {
+              "id": "42867467-2fb7-481d-8397-399c1ea00d76",
+              "name": "ServiceQuotaExceededException",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"Catalog\": \"IfMQR\",\n  \"ChangeSet\": [\n    {\n      \"ChangeType\": \"Af20YzMFRJk\",\n      \"Entity\": {\n        \"Type\": \"Ysxo\",\n        \"Identifier\": \"5Lys-qhXk\"\n      },\n      \"Details\": \"\u00a0{.|W3lY~u<\u2000}\u205f\u2000\u00a0\u2009\u202f\u2001\\f\u2029\u180e\",\n      \"EntityTags\": [\n        {\n          \"Key\": \"=\",\n          \"Value\": \"/=N=./N@\"\n        }\n      ],\n      \"ChangeName\": \"g\"\n    }\n  ],\n  \"ChangeSetName\": \"4\u2006_\u2005k\\nmCO\",\n  \"ClientRequestToken\": \"@I}/\",\n  \"ChangeSetTags\": [\n    {\n      \"Key\": \"Z{p}=:Z\",\n      \"Value\": \"/}NN@ZL@\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/StartChangeSet",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "StartChangeSet"
+                  ]
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:51.000Z",
+              "updatedAt": "2026-07-28T10:37:51.000Z",
+              "uid": "35240-42867467-2fb7-481d-8397-399c1ea00d76"
+            }
+          ],
+          "createdAt": "2026-07-28T10:37:51.000Z",
+          "updatedAt": "2026-07-28T10:37:51.000Z",
+          "uid": "35240-dea628fe-628d-4f3d-816e-683ce5f1cbde"
+        }
+      ],
+      "id": "30cb33bd-1b15-434b-8185-30e5fe5b8bd5",
+      "createdAt": "2026-07-28T10:37:51.000Z",
+      "updatedAt": "2026-07-28T10:37:51.000Z",
+      "uid": "35240-30cb33bd-1b15-434b-8185-30e5fe5b8bd5"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://catalog.marketplace.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: '2018-09-17'
+  version: "1.0.0"
   x-release: v4
   title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId TagResource API
   description: <p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
@@ -24,7 +24,6 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/marketplace-catalog-2018-09-17.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
-      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct

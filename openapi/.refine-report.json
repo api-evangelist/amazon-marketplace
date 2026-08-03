@@ -1,0 +1,36 @@
+{
+  "provider": "amazon-marketplace",
+  "sources": [
+    "amazon-marketplace-cancelchangeset-catalog-changesetid-api-openapi.yml",
+    "amazon-marketplace-deleteresourcepolicy-resourcearn-api-openapi.yml",
+    "amazon-marketplace-describechangeset-catalog-changesetid-api-openapi.yml",
+    "amazon-marketplace-describeentity-catalog-entityid-api-openapi.yml",
+    "amazon-marketplace-getresourcepolicy-resourcearn-api-openapi.yml",
+    "amazon-marketplace-listchangesets-api-openapi.yml",
+    "amazon-marketplace-listentities-api-openapi.yml",
+    "amazon-marketplace-listtagsforresource-api-openapi.yml",
+    "amazon-marketplace-putresourcepolicy-api-openapi.yml",
+    "amazon-marketplace-startchangeset-api-openapi.yml",
+    "amazon-marketplace-tagresource-api-openapi.yml",
+    "amazon-marketplace-untagresource-api-openapi.yml"
+  ],
+  "outputs": [
+    "amazon-marketplace-cancelchangeset-catalog-changesetid-api-openapi.yml",
+    "amazon-marketplace-deleteresourcepolicy-resourcearn-api-openapi.yml",
+    "amazon-marketplace-describechangeset-catalog-changesetid-api-openapi.yml",
+    "amazon-marketplace-describeentity-catalog-entityid-api-openapi.yml",
+    "amazon-marketplace-getresourcepolicy-resourcearn-api-openapi.yml",
+    "amazon-marketplace-listchangesets-api-openapi.yml",
+    "amazon-marketplace-listentities-api-openapi.yml",
+    "amazon-marketplace-listtagsforresource-api-openapi.yml",
+    "amazon-marketplace-putresourcepolicy-api-openapi.yml",
+    "amazon-marketplace-startchangeset-api-openapi.yml",
+    "amazon-marketplace-tagresource-api-openapi.yml",
+    "amazon-marketplace-untagresource-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

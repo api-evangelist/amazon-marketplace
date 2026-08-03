@@ -1,0 +1,578 @@
+{
+  "info": {
+    "_postman_id": "f8ddc77e-ff7e-4687-8295-8fa6214d3757",
+    "name": "AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId DeleteResourcePolicy#resourceArn API",
+    "description": "<p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:37:41.000Z",
+    "updatedAt": "2026-07-28T10:37:42.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-f8ddc77e-ff7e-4687-8295-8fa6214d3757"
+  },
+  "item": [
+    {
+      "name": "DeleteResourcePolicy#resourceArn",
+      "item": [
+        {
+          "name": "Amazon Marketplace Delete Resource Policy",
+          "id": "13dabce8-81fa-4e40-8ec0-8b58b23793be",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Date",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Algorithm",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Credential",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Security-Token",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-Signature",
+                "value": "<string>"
+              },
+              {
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/DeleteResourcePolicy?resourceArn=arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,#resourceArn",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "DeleteResourcePolicy"
+              ],
+              "query": [
+                {
+                  "description": "(Required) The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.",
+                  "key": "resourceArn",
+                  "value": "arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,"
+                }
+              ],
+              "hash": "resourceArn"
+            },
+            "description": "Deletes a resource-based policy on an Entity that is identified by its resource ARN."
+          },
+          "response": [
+            {
+              "id": "09cd1517-83ac-4ff1-9f63-efbf05a257f4",
+              "name": "Success",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DeleteResourcePolicy?resourceArn=arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,#resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DeleteResourcePolicy"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.",
+                      "key": "resourceArn",
+                      "value": "arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,"
+                    }
+                  ],
+                  "hash": "resourceArn"
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:42.000Z",
+              "updatedAt": "2026-07-28T10:37:42.000Z",
+              "uid": "35240-09cd1517-83ac-4ff1-9f63-efbf05a257f4"
+            },
+            {
+              "id": "023a7d3c-923b-4f63-b840-0eef32072a7a",
+              "name": "InternalServiceException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DeleteResourcePolicy?resourceArn=arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,#resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DeleteResourcePolicy"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.",
+                      "key": "resourceArn",
+                      "value": "arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,"
+                    }
+                  ],
+                  "hash": "resourceArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:42.000Z",
+              "updatedAt": "2026-07-28T10:37:42.000Z",
+              "uid": "35240-023a7d3c-923b-4f63-b840-0eef32072a7a"
+            },
+            {
+              "id": "08c3085b-ab45-4f77-8d60-dcce50ab53b5",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DeleteResourcePolicy?resourceArn=arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,#resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DeleteResourcePolicy"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.",
+                      "key": "resourceArn",
+                      "value": "arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,"
+                    }
+                  ],
+                  "hash": "resourceArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:42.000Z",
+              "updatedAt": "2026-07-28T10:37:42.000Z",
+              "uid": "35240-08c3085b-ab45-4f77-8d60-dcce50ab53b5"
+            },
+            {
+              "id": "b9c06efc-56f8-4ee6-b051-93cc2bfae098",
+              "name": "ValidationException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DeleteResourcePolicy?resourceArn=arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,#resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DeleteResourcePolicy"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.",
+                      "key": "resourceArn",
+                      "value": "arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,"
+                    }
+                  ],
+                  "hash": "resourceArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:42.000Z",
+              "updatedAt": "2026-07-28T10:37:42.000Z",
+              "uid": "35240-b9c06efc-56f8-4ee6-b051-93cc2bfae098"
+            },
+            {
+              "id": "400cee5d-961a-4422-86ce-632d4d6109bd",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DeleteResourcePolicy?resourceArn=arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,#resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DeleteResourcePolicy"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.",
+                      "key": "resourceArn",
+                      "value": "arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,"
+                    }
+                  ],
+                  "hash": "resourceArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:42.000Z",
+              "updatedAt": "2026-07-28T10:37:42.000Z",
+              "uid": "35240-400cee5d-961a-4422-86ce-632d4d6109bd"
+            },
+            {
+              "id": "fa8fab11-40c7-48e6-8a09-3ba62a56fb85",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: apikey",
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/DeleteResourcePolicy?resourceArn=arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,#resourceArn",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "DeleteResourcePolicy"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.",
+                      "key": "resourceArn",
+                      "value": "arn:L-4gfRyo4b:aws-marketplace:dm:5209:uzCjkBxq/9hT/5r_pBy9Z1Y/H/apzq_,/Ioe./NslA-XZ/6EAeQ,"
+                    }
+                  ],
+                  "hash": "resourceArn"
+                }
+              },
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{}",
+              "createdAt": "2026-07-28T10:37:42.000Z",
+              "updatedAt": "2026-07-28T10:37:42.000Z",
+              "uid": "35240-fa8fab11-40c7-48e6-8a09-3ba62a56fb85"
+            }
+          ],
+          "createdAt": "2026-07-28T10:37:42.000Z",
+          "updatedAt": "2026-07-28T10:37:42.000Z",
+          "uid": "35240-13dabce8-81fa-4e40-8ec0-8b58b23793be"
+        }
+      ],
+      "id": "e5263597-3d8d-4470-9679-7b9c0c28f7a3",
+      "createdAt": "2026-07-28T10:37:42.000Z",
+      "updatedAt": "2026-07-28T10:37:42.000Z",
+      "uid": "35240-e5263597-3d8d-4470-9679-7b9c0c28f7a3"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://catalog.marketplace.{{region}}.amazonaws.com"
+    }
+  ]
+}
