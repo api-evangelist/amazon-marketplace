@@ -55,8 +55,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-deleteresourcepolicy-resourcearn-api
   name: Amazon Marketplace DeleteResourcePolicy#resourceArn API
   description: >-
@@ -82,8 +80,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-describechangeset-catalog-changesetid-api
   name: Amazon Marketplace DescribeChangeSet#catalog&changeSetId API
   description: >-
@@ -109,8 +105,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-describeentity-catalog-entityid-api
   name: Amazon Marketplace DescribeEntity#catalog&entityId API
   description: >-
@@ -136,8 +130,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-getresourcepolicy-resourcearn-api
   name: Amazon Marketplace GetResourcePolicy#resourceArn API
   description: >-
@@ -163,8 +155,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-listchangesets-api
   name: Amazon Marketplace ListChangeSets API
   description: The ListChangeSets API from Amazon Marketplace — 1 operation(s) for listchangesets.
@@ -189,8 +179,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-listentities-api
   name: Amazon Marketplace ListEntities API
   description: The ListEntities API from Amazon Marketplace — 1 operation(s) for listentities.
@@ -215,8 +203,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-listtagsforresource-api
   name: Amazon Marketplace ListTagsForResource API
   description: >-
@@ -242,8 +228,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-putresourcepolicy-api
   name: Amazon Marketplace PutResourcePolicy API
   description: >-
@@ -269,8 +253,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-startchangeset-api
   name: Amazon Marketplace StartChangeSet API
   description: The StartChangeSet API from Amazon Marketplace — 1 operation(s) for startchangeset.
@@ -295,8 +277,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-tagresource-api
   name: Amazon Marketplace TagResource API
   description: The TagResource API from Amazon Marketplace — 1 operation(s) for tagresource.
@@ -321,8 +301,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 - aid: amazon-marketplace:amazon-marketplace-untagresource-api
   name: Amazon Marketplace UntagResource API
   description: The UntagResource API from Amazon Marketplace — 1 operation(s) for untagresource.
@@ -347,8 +325,6 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-  - type: X-NaftikoCapability
-    url: capabilities/amazon-marketplace.yaml
 common:
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-marketplace/overview
