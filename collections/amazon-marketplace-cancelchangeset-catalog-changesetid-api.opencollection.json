@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "CancelChangeSet#catalog&changeSetId",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Marketplace Cancel Change Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "http://catalog.marketplace.{region}.amazonaws.com/CancelChangeSet#catalog&changeSetId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "catalog",
+                "value": "",
+                "type": "query",
+                "description": "Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>."
+              },
+              {
+                "name": "changeSetId",
+                "value": "",
+                "type": "query",
+                "description": "Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel."
+              }
+            ]
+          },
+          "docs": "Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId DescribeEntity#catalog&entityId API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DescribeEntity#catalog&entityId",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Marketplace Describe Entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://catalog.marketplace.{region}.amazonaws.com/DescribeEntity#catalog&entityId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "catalog",
+                "value": "",
+                "type": "query",
+                "description": "Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> "
+              },
+              {
+                "name": "entityId",
+                "value": "",
+                "type": "query",
+                "description": "Required. The unique ID of the entity to describe."
+              }
+            ]
+          },
+          "docs": "Returns the metadata and content of the entity."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId DescribeChangeSet#catalog&changeSetId API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "DescribeChangeSet#catalog&changeSetId",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Marketplace Describe Change Set",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://catalog.marketplace.{region}.amazonaws.com/DescribeChangeSet#catalog&changeSetId",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "catalog",
+                "value": "",
+                "type": "query",
+                "description": "Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> "
+              },
+              {
+                "name": "changeSetId",
+                "value": "",
+                "type": "query",
+                "description": "Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for."
+              }
+            ]
+          },
+          "docs": "Provides information about a given change set."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
