@@ -5,6 +5,18 @@ description: AWS Marketplace is a curated digital catalog that makes it easy to 
   The Marketplace Catalog API enables programmatic management of marketplace entities including products, offers, and data
   products through change sets and entity description operations.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
