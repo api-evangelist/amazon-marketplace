@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId StartChangeSet API
+  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId Start Change Set API
   description: <p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -223,50 +223,52 @@ paths:
       - StartChangeSet
 components:
   schemas:
-    Json:
+    ValidationException: {}
+    ServiceQuotaExceededException: {}
+    Identifier:
       type: string
-      pattern: ^[\s]*\{[\s\S]*\}[\s]*$
-      minLength: 2
-      maxLength: 16384
-    ResourceNotFoundException: {}
-    TagKey:
+      pattern: ^[\w\-@]+$
+      minLength: 1
+      maxLength: 255
+    AccessDeniedException: {}
+    InternalServiceException: {}
+    ChangeName:
+      type: string
+      pattern: ^[a-zA-Z]$
+      minLength: 1
+      maxLength: 72
+    TagValue:
       type: string
       pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 1
-      maxLength: 128
-    ThrottlingException: {}
-    ResourceInUseException: {}
+      minLength: 0
+      maxLength: 256
     ResourceId:
       type: string
       pattern: ^[\w\-]+$
       minLength: 1
       maxLength: 255
-    Entity:
-      type: object
-      required:
-      - Type
-      properties:
-        Type:
-          allOf:
-          - $ref: '#/components/schemas/EntityType'
-          - description: The type of entity.
-        Identifier:
-          allOf:
-          - $ref: '#/components/schemas/Identifier'
-          - description: The identifier for the entity.
-      description: 'An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. '
-    AccessDeniedException: {}
-    StartChangeSetResponse:
-      type: object
-      properties:
-        ChangeSetId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: Unique identifier generated for the request.
-        ChangeSetArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: The ARN associated to the unique identifier generated for the request.
+    Json:
+      type: string
+      pattern: ^[\s]*\{[\s\S]*\}[\s]*$
+      minLength: 2
+      maxLength: 16384
+    ThrottlingException: {}
+    EntityType:
+      type: string
+      pattern: ^[a-zA-Z]+$
+      minLength: 1
+      maxLength: 255
+    ChangeType:
+      type: string
+      pattern: ^[A-Z][\w]*$
+      minLength: 1
+      maxLength: 255
+    ARN:
+      type: string
+      pattern: ^[a-zA-Z0-9:*/-]+$
+      minLength: 1
+      maxLength: 2048
+    ResourceNotFoundException: {}
     Change:
       type: object
       required:
@@ -295,12 +297,23 @@ components:
           - $ref: '#/components/schemas/ChangeName'
           - description: Optional name for the change.
       description: An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.
-    EntityType:
-      type: string
-      pattern: ^[a-zA-Z]+$
-      minLength: 1
-      maxLength: 255
-    ValidationException: {}
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      minItems: 1
+      maxItems: 200
+    StartChangeSetResponse:
+      type: object
+      properties:
+        ChangeSetId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: Unique identifier generated for the request.
+        ChangeSetArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The ARN associated to the unique identifier generated for the request.
     Tag:
       type: object
       required:
@@ -316,58 +329,27 @@ components:
           - $ref: '#/components/schemas/TagValue'
           - description: The value associated with the tag.
       description: A list of objects specifying each key name and value.
-    InternalServiceException: {}
-    TagValue:
+    ResourceInUseException: {}
+    Entity:
+      type: object
+      required:
+      - Type
+      properties:
+        Type:
+          allOf:
+          - $ref: '#/components/schemas/EntityType'
+          - description: The type of entity.
+        Identifier:
+          allOf:
+          - $ref: '#/components/schemas/Identifier'
+          - description: The identifier for the entity.
+      description: 'An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. '
+    TagKey:
       type: string
       pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 0
-      maxLength: 256
-    ServiceQuotaExceededException: {}
-    ChangeType:
-      type: string
-      pattern: ^[A-Z][\w]*$
       minLength: 1
-      maxLength: 255
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      minItems: 1
-      maxItems: 200
-    Identifier:
-      type: string
-      pattern: ^[\w\-@]+$
-      minLength: 1
-      maxLength: 255
-    ChangeName:
-      type: string
-      pattern: ^[a-zA-Z]$
-      minLength: 1
-      maxLength: 72
-    ARN:
-      type: string
-      pattern: ^[a-zA-Z0-9:*/-]+$
-      minLength: 1
-      maxLength: 2048
+      maxLength: 128
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -380,14 +362,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

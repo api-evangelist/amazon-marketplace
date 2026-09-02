@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId ListEntities API
+  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId List Entities API
   description: <p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -239,69 +239,49 @@ paths:
       - ListEntities
 components:
   schemas:
-    ResourceNotFoundException: {}
-    Filter:
+    ValidationException: {}
+    ListEntitiesResponse:
       type: object
       properties:
-        Name:
+        EntitySummaryList:
           allOf:
-          - $ref: '#/components/schemas/FilterName'
-          - description: <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
-        ValueList:
+          - $ref: '#/components/schemas/EntitySummaryList'
+          - description: ' Array of <code>EntitySummary</code> object.'
+        NextToken:
           allOf:
-          - $ref: '#/components/schemas/ValueList'
-          - description: <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> <ul> <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> </ul>
-      description: A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.
-    ThrottlingException: {}
-    VisibilityValue:
-      type: string
-      pattern: ^[a-zA-Z]+$
-      minLength: 1
-      maxLength: 64
-    ValueList:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The value of the next token if it exists. Null if there is no more result.
+    EntitySummaryList:
       type: array
       items:
-        $ref: '#/components/schemas/FilterValueContent'
-      minItems: 1
-      maxItems: 10
-    ResourceId:
-      type: string
-      pattern: ^[\w\-]+$
-      minLength: 1
-      maxLength: 255
-    FilterValueContent:
-      type: string
-      pattern: ^(.)+$
-      minLength: 1
-      maxLength: 255
+        $ref: '#/components/schemas/EntitySummary'
     EntityNameString:
       type: string
       pattern: ^\\S+[\\S\\s]*
       minLength: 1
       maxLength: 255
-    FilterName:
+    AccessDeniedException: {}
+    InternalServiceException: {}
+    SortOrder:
       type: string
-      pattern: ^[a-zA-Z]+$
-      minLength: 1
-      maxLength: 255
+      enum:
+      - ASCENDING
+      - DESCENDING
     NextToken:
       type: string
       pattern: ^[\w+=.:@\-\/]$
       minLength: 1
       maxLength: 2048
-    AccessDeniedException: {}
-    EntityType:
+    ResourceId:
+      type: string
+      pattern: ^[\w\-]+$
+      minLength: 1
+      maxLength: 255
+    SortBy:
       type: string
       pattern: ^[a-zA-Z]+$
       minLength: 1
       maxLength: 255
-    ValidationException: {}
-    InternalServiceException: {}
-    DateTimeISO8601:
-      type: string
-      pattern: ^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$
-      minLength: 20
-      maxLength: 20
     EntitySummary:
       type: object
       properties:
@@ -330,55 +310,57 @@ components:
           - $ref: '#/components/schemas/VisibilityValue'
           - description: 'The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). '
       description: This object is a container for common summary information about the entity. The summary doesn't contain the whole entity structure, but it does contain information common across all entities.
-    ListEntitiesResponse:
-      type: object
-      properties:
-        EntitySummaryList:
-          allOf:
-          - $ref: '#/components/schemas/EntitySummaryList'
-          - description: ' Array of <code>EntitySummary</code> object.'
-        NextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The value of the next token if it exists. Null if there is no more result.
-    SortOrder:
-      type: string
-      enum:
-      - ASCENDING
-      - DESCENDING
-    SortBy:
+    ThrottlingException: {}
+    EntityType:
       type: string
       pattern: ^[a-zA-Z]+$
       minLength: 1
       maxLength: 255
-    EntitySummaryList:
-      type: array
-      items:
-        $ref: '#/components/schemas/EntitySummary'
+    Filter:
+      type: object
+      properties:
+        Name:
+          allOf:
+          - $ref: '#/components/schemas/FilterName'
+          - description: <p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>
+        ValueList:
+          allOf:
+          - $ref: '#/components/schemas/ValueList'
+          - description: <p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> <ul> <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> </ul>
+      description: A filter object, used to optionally filter results from calls to the <code>ListEntities</code> and <code>ListChangeSets</code> actions.
+    VisibilityValue:
+      type: string
+      pattern: ^[a-zA-Z]+$
+      minLength: 1
+      maxLength: 64
+    DateTimeISO8601:
+      type: string
+      pattern: ^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$
+      minLength: 20
+      maxLength: 20
     ARN:
       type: string
       pattern: ^[a-zA-Z0-9:*/-]+$
       minLength: 1
       maxLength: 2048
+    ResourceNotFoundException: {}
+    FilterName:
+      type: string
+      pattern: ^[a-zA-Z]+$
+      minLength: 1
+      maxLength: 255
+    FilterValueContent:
+      type: string
+      pattern: ^(.)+$
+      minLength: 1
+      maxLength: 255
+    ValueList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FilterValueContent'
+      minItems: 1
+      maxItems: 10
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -391,14 +373,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

@@ -1,8 +1,8 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
-  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId DescribeChangeSet#catalog&changeSetId API
+  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId Describe Change Set#catalog&change Set ID API
   description: <p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -187,11 +187,97 @@ paths:
       - DescribeChangeSet#catalog&changeSetId
 components:
   schemas:
+    ValidationException: {}
+    ErrorCodeString:
+      type: string
+      pattern: ^[a-zA-Z_]+$
+      minLength: 1
+      maxLength: 72
+    ChangeSummary:
+      type: object
+      properties:
+        ChangeType:
+          allOf:
+          - $ref: '#/components/schemas/ChangeType'
+          - description: The type of the change.
+        Entity:
+          allOf:
+          - $ref: '#/components/schemas/Entity'
+          - description: The entity to be changed.
+        Details:
+          allOf:
+          - $ref: '#/components/schemas/Json'
+          - description: This object contains details specific to the change type of the requested change.
+        ErrorDetailList:
+          allOf:
+          - $ref: '#/components/schemas/ErrorDetailList'
+          - description: An array of <code>ErrorDetail</code> objects associated with the change.
+        ChangeName:
+          allOf:
+          - $ref: '#/components/schemas/ChangeName'
+          - description: Optional name for the change.
+      description: This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.
+    Identifier:
+      type: string
+      pattern: ^[\w\-@]+$
+      minLength: 1
+      maxLength: 255
+    AccessDeniedException: {}
+    ChangeSetName:
+      type: string
+      pattern: ^[\w\s+=.:@-]+$
+      minLength: 1
+      maxLength: 100
+    InternalServiceException: {}
+    ChangeName:
+      type: string
+      pattern: ^[a-zA-Z]$
+      minLength: 1
+      maxLength: 72
+    FailureCode:
+      type: string
+      enum:
+      - CLIENT_ERROR
+      - SERVER_FAULT
+    ErrorDetailList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ErrorDetail'
+    ResourceId:
+      type: string
+      pattern: ^[\w\-]+$
+      minLength: 1
+      maxLength: 255
+    ChangeSetDescription:
+      type: array
+      items:
+        $ref: '#/components/schemas/ChangeSummary'
     Json:
       type: string
       pattern: ^[\s]*\{[\s\S]*\}[\s]*$
       minLength: 2
       maxLength: 16384
+    ThrottlingException: {}
+    EntityType:
+      type: string
+      pattern: ^[a-zA-Z]+$
+      minLength: 1
+      maxLength: 255
+    ChangeType:
+      type: string
+      pattern: ^[A-Z][\w]*$
+      minLength: 1
+      maxLength: 255
+    DateTimeISO8601:
+      type: string
+      pattern: ^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$
+      minLength: 20
+      maxLength: 20
+    ARN:
+      type: string
+      pattern: ^[a-zA-Z0-9:*/-]+$
+      minLength: 1
+      maxLength: 2048
     ResourceNotFoundException: {}
     DescribeChangeSetResponse:
       type: object
@@ -232,28 +318,14 @@ components:
           allOf:
           - $ref: '#/components/schemas/ChangeSetDescription'
           - description: An array of <code>ChangeSummary</code> objects.
-    ThrottlingException: {}
-    ErrorDetail:
-      type: object
-      properties:
-        ErrorCode:
-          allOf:
-          - $ref: '#/components/schemas/ErrorCodeString'
-          - description: The error code that identifies the type of error.
-        ErrorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ExceptionMessageContent'
-          - description: The message for the error.
-      description: Details about the error.
-    ErrorDetailList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ErrorDetail'
-    ResourceId:
+    ChangeStatus:
       type: string
-      pattern: ^[\w\-]+$
-      minLength: 1
-      maxLength: 255
+      enum:
+      - PREPARING
+      - APPLYING
+      - SUCCEEDED
+      - CANCELLED
+      - FAILED
     Entity:
       type: object
       required:
@@ -268,114 +340,24 @@ components:
           - $ref: '#/components/schemas/Identifier'
           - description: The identifier for the entity.
       description: 'An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. '
-    ChangeSetDescription:
-      type: array
-      items:
-        $ref: '#/components/schemas/ChangeSummary'
+    ErrorDetail:
+      type: object
+      properties:
+        ErrorCode:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCodeString'
+          - description: The error code that identifies the type of error.
+        ErrorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ExceptionMessageContent'
+          - description: The message for the error.
+      description: Details about the error.
     ExceptionMessageContent:
       type: string
       pattern: ^(.)+$
       minLength: 1
       maxLength: 2048
-    AccessDeniedException: {}
-    FailureCode:
-      type: string
-      enum:
-      - CLIENT_ERROR
-      - SERVER_FAULT
-    EntityType:
-      type: string
-      pattern: ^[a-zA-Z]+$
-      minLength: 1
-      maxLength: 255
-    ChangeSetName:
-      type: string
-      pattern: ^[\w\s+=.:@-]+$
-      minLength: 1
-      maxLength: 100
-    ValidationException: {}
-    InternalServiceException: {}
-    DateTimeISO8601:
-      type: string
-      pattern: ^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$
-      minLength: 20
-      maxLength: 20
-    ChangeType:
-      type: string
-      pattern: ^[A-Z][\w]*$
-      minLength: 1
-      maxLength: 255
-    ErrorCodeString:
-      type: string
-      pattern: ^[a-zA-Z_]+$
-      minLength: 1
-      maxLength: 72
-    ChangeSummary:
-      type: object
-      properties:
-        ChangeType:
-          allOf:
-          - $ref: '#/components/schemas/ChangeType'
-          - description: The type of the change.
-        Entity:
-          allOf:
-          - $ref: '#/components/schemas/Entity'
-          - description: The entity to be changed.
-        Details:
-          allOf:
-          - $ref: '#/components/schemas/Json'
-          - description: This object contains details specific to the change type of the requested change.
-        ErrorDetailList:
-          allOf:
-          - $ref: '#/components/schemas/ErrorDetailList'
-          - description: An array of <code>ErrorDetail</code> objects associated with the change.
-        ChangeName:
-          allOf:
-          - $ref: '#/components/schemas/ChangeName'
-          - description: Optional name for the change.
-      description: This object is a container for common summary information about the change. The summary doesn't contain the whole change structure.
-    Identifier:
-      type: string
-      pattern: ^[\w\-@]+$
-      minLength: 1
-      maxLength: 255
-    ChangeName:
-      type: string
-      pattern: ^[a-zA-Z]$
-      minLength: 1
-      maxLength: 72
-    ARN:
-      type: string
-      pattern: ^[a-zA-Z0-9:*/-]+$
-      minLength: 1
-      maxLength: 2048
-    ChangeStatus:
-      type: string
-      enum:
-      - PREPARING
-      - APPLYING
-      - SUCCEEDED
-      - CANCELLED
-      - FAILED
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
       in: header
@@ -388,14 +370,32 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
