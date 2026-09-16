@@ -1,9 +1,9 @@
 aid: amazon-marketplace
 name: Amazon Marketplace
-description: AWS Marketplace is a curated digital catalog that makes it easy to find, buy, deploy, and manage third-party
-  software, data, and services that run on AWS. It offers thousands of software listings from independent software vendors.
-  The Marketplace Catalog API enables programmatic management of marketplace entities including products, offers, and data
-  products through change sets and entity description operations.
+description: AWS Marketplace is a curated digital catalog that makes it easy to find, buy, deploy, and
+  manage third-party software, data, and services that run on AWS. It offers thousands of software listings
+  from independent software vendors. The Marketplace Catalog API enables programmatic management of marketplace
+  entities including products, offers, and data products through change sets and entity description operations.
 type: Index
 deliveryModel:
   model: saas
@@ -40,13 +40,13 @@ tags:
 - Software Catalog
 url: https://raw.githubusercontent.com/api-evangelist/amazon-marketplace/refs/heads/main/apis.yml
 created: '2026-03-16'
-modified: '2026-05-19'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: amazon-marketplace:amazon-marketplace-cancelchangeset-catalog-changesetid-api
   name: Amazon Marketplace CancelChangeSet#catalog&changeSetId API
-  description: >-
-    The CancelChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for cancelchangeset#catalog&changesetid.
+  description: The CancelChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for
+    cancelchangeset#catalog&changesetid.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -70,8 +70,7 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-deleteresourcepolicy-resourcearn-api
   name: Amazon Marketplace DeleteResourcePolicy#resourceArn API
-  description: >-
-    The DeleteResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for deleteresourcepolicy#resourcearn.
+  description: The DeleteResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for deleteresourcepolicy#resourcearn.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -95,8 +94,8 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-describechangeset-catalog-changesetid-api
   name: Amazon Marketplace DescribeChangeSet#catalog&changeSetId API
-  description: >-
-    The DescribeChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for describechangeset#catalog&changesetid.
+  description: The DescribeChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s)
+    for describechangeset#catalog&changesetid.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -120,8 +119,7 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-describeentity-catalog-entityid-api
   name: Amazon Marketplace DescribeEntity#catalog&entityId API
-  description: >-
-    The DescribeEntity#catalog&entityId API from Amazon Marketplace — 1 operation(s) for describeentity#catalog&entityid.
+  description: The DescribeEntity#catalog&entityId API from Amazon Marketplace — 1 operation(s) for describeentity#catalog&entityid.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -145,8 +143,7 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-getresourcepolicy-resourcearn-api
   name: Amazon Marketplace GetResourcePolicy#resourceArn API
-  description: >-
-    The GetResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for getresourcepolicy#resourcearn.
+  description: The GetResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for getresourcepolicy#resourcearn.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -218,8 +215,7 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-listtagsforresource-api
   name: Amazon Marketplace ListTagsForResource API
-  description: >-
-    The ListTagsForResource API from Amazon Marketplace — 1 operation(s) for listtagsforresource.
+  description: The ListTagsForResource API from Amazon Marketplace — 1 operation(s) for listtagsforresource.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -243,8 +239,7 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-putresourcepolicy-api
   name: Amazon Marketplace PutResourcePolicy API
-  description: >-
-    The PutResourcePolicy API from Amazon Marketplace — 1 operation(s) for putresourcepolicy.
+  description: The PutResourcePolicy API from Amazon Marketplace — 1 operation(s) for putresourcepolicy.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -339,6 +334,8 @@ apis:
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
 common:
+- type: Website
+  url: https://amazon.com
 - type: PostmanWorkspace
   url: https://www.postman.com/kinlaneapi/amazon-marketplace/overview
 - type: AgenticAccess
@@ -382,11 +379,14 @@ common:
 - type: Features
   data:
   - name: Entity Management
-    description: Programmatically list and describe marketplace entities including software products, data products, and offers.
+    description: Programmatically list and describe marketplace entities including software products,
+      data products, and offers.
   - name: Change Set Lifecycle
-    description: Start, monitor, and cancel change sets for publishing new listings or updating existing ones.
+    description: Start, monitor, and cancel change sets for publishing new listings or updating existing
+      ones.
   - name: Resource Policies
-    description: Attach, retrieve, and remove resource-based policies to control access to marketplace entities.
+    description: Attach, retrieve, and remove resource-based policies to control access to marketplace
+      entities.
   - name: Resource Tagging
     description: Tag marketplace resources with key-value pairs for organization and cost allocation.
   - name: Multi-Region Support
@@ -404,7 +404,8 @@ common:
   - name: Multi-Account Marketplace Management
     description: Manage marketplace listings across multiple AWS accounts with shared resource policies.
   - name: ISV Self-Service Publishing
-    description: Enable ISV teams to self-service publish and update product listings through the catalog API.
+    description: Enable ISV teams to self-service publish and update product listings through the catalog
+      API.
 - type: Integrations
   data:
   - name: AWS IAM
