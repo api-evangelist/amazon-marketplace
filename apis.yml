@@ -45,8 +45,8 @@ specificationVersion: '0.23'
 apis:
 - aid: amazon-marketplace:amazon-marketplace-cancelchangeset-catalog-changesetid-api
   name: Amazon Marketplace CancelChangeSet#catalog&changeSetId API
-  description: The CancelChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for
-    cancelchangeset#catalog&changesetid.
+  description: >-
+    The CancelChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for cancelchangeset#catalog&changesetid.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -70,7 +70,8 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-deleteresourcepolicy-resourcearn-api
   name: Amazon Marketplace DeleteResourcePolicy#resourceArn API
-  description: The DeleteResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for deleteresourcepolicy#resourcearn.
+  description: >-
+    The DeleteResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for deleteresourcepolicy#resourcearn.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -94,8 +95,8 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-describechangeset-catalog-changesetid-api
   name: Amazon Marketplace DescribeChangeSet#catalog&changeSetId API
-  description: The DescribeChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s)
-    for describechangeset#catalog&changesetid.
+  description: >-
+    The DescribeChangeSet#catalog&changeSetId API from Amazon Marketplace — 1 operation(s) for describechangeset#catalog&changesetid.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -119,7 +120,8 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-describeentity-catalog-entityid-api
   name: Amazon Marketplace DescribeEntity#catalog&entityId API
-  description: The DescribeEntity#catalog&entityId API from Amazon Marketplace — 1 operation(s) for describeentity#catalog&entityid.
+  description: >-
+    The DescribeEntity#catalog&entityId API from Amazon Marketplace — 1 operation(s) for describeentity#catalog&entityid.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -143,7 +145,8 @@ apis:
     url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-getresourcepolicy-resourcearn-api
   name: Amazon Marketplace GetResourcePolicy#resourceArn API
-  description: The GetResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for getresourcepolicy#resourcearn.
+  description: >-
+    The GetResourcePolicy#resourceArn API from Amazon Marketplace — 1 operation(s) for getresourcepolicy#resourcearn.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -213,33 +216,10 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-- aid: amazon-marketplace:amazon-marketplace-listtagsforresource-api
-  name: Amazon Marketplace ListTagsForResource API
-  description: The ListTagsForResource API from Amazon Marketplace — 1 operation(s) for listtagsforresource.
-  humanURL: https://aws.amazon.com/marketplace/
-  baseURL: https://catalog.marketplace.amazonaws.com
-  tags:
-  - ListTagsForResource
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-marketplace-listtagsforresource-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/marketplace/management/portal/
-  - type: Pricing
-    url: https://aws.amazon.com/marketplace/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/marketplace/help/
-  - type: JSONSchema
-    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
-  - type: JSONStructure
-    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
-  - type: JSONLD
-    url: json-ld/amazon-marketplace-context.jsonld
 - aid: amazon-marketplace:amazon-marketplace-putresourcepolicy-api
   name: Amazon Marketplace PutResourcePolicy API
-  description: The PutResourcePolicy API from Amazon Marketplace — 1 operation(s) for putresourcepolicy.
+  description: >-
+    The PutResourcePolicy API from Amazon Marketplace — 1 operation(s) for putresourcepolicy.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
@@ -285,16 +265,17 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-- aid: amazon-marketplace:amazon-marketplace-tagresource-api
-  name: Amazon Marketplace TagResource API
-  description: The TagResource API from Amazon Marketplace — 1 operation(s) for tagresource.
+- aid: amazon-marketplace:amazon-marketplace-list-tags-for-resource-api
+  name: Amazon Marketplace List Tags For Resource API
+  description: >-
+    The List Tags For Resource API from Amazon Marketplace — 1 operation(s) for list tags for resource.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
-  - TagResource
+  - List Tags For Resource
   properties:
   - type: OpenAPI
-    url: openapi/amazon-marketplace-tagresource-api-openapi.yml
+    url: openapi/amazon-marketplace-list-tags-for-resource-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
   - type: GettingStarted
@@ -309,16 +290,40 @@ apis:
     url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
   - type: JSONLD
     url: json-ld/amazon-marketplace-context.jsonld
-- aid: amazon-marketplace:amazon-marketplace-untagresource-api
-  name: Amazon Marketplace UntagResource API
-  description: The UntagResource API from Amazon Marketplace — 1 operation(s) for untagresource.
+- aid: amazon-marketplace:amazon-marketplace-tag-resource-api
+  name: Amazon Marketplace Tag Resource API
+  description: The Tag Resource API from Amazon Marketplace — 1 operation(s) for tag resource.
   humanURL: https://aws.amazon.com/marketplace/
   baseURL: https://catalog.marketplace.amazonaws.com
   tags:
-  - UntagResource
+  - Tag Resource
   properties:
   - type: OpenAPI
-    url: openapi/amazon-marketplace-untagresource-api-openapi.yml
+    url: openapi/amazon-marketplace-tag-resource-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/marketplace/management/portal/
+  - type: Pricing
+    url: https://aws.amazon.com/marketplace/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/marketplace/help/
+  - type: JSONSchema
+    url: json-schema/amazon-marketplace-change-set-summary-list-item-schema.json
+  - type: JSONStructure
+    url: json-structure/amazon-marketplace-change-set-summary-list-item-structure.json
+  - type: JSONLD
+    url: json-ld/amazon-marketplace-context.jsonld
+- aid: amazon-marketplace:amazon-marketplace-untag-resource-api
+  name: Amazon Marketplace Untag Resource API
+  description: The Untag Resource API from Amazon Marketplace — 1 operation(s) for untag resource.
+  humanURL: https://aws.amazon.com/marketplace/
+  baseURL: https://catalog.marketplace.amazonaws.com
+  tags:
+  - Untag Resource
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-marketplace-untag-resource-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html
   - type: GettingStarted
