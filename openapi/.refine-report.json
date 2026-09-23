@@ -1,18 +1,7 @@
 {
   "provider": "amazon-marketplace",
   "sources": [
-    "amazon-marketplace-cancelchangeset-catalog-changesetid-api-openapi.yml",
-    "amazon-marketplace-deleteresourcepolicy-resourcearn-api-openapi.yml",
-    "amazon-marketplace-describechangeset-catalog-changesetid-api-openapi.yml",
-    "amazon-marketplace-describeentity-catalog-entityid-api-openapi.yml",
-    "amazon-marketplace-getresourcepolicy-resourcearn-api-openapi.yml",
-    "amazon-marketplace-listchangesets-api-openapi.yml",
-    "amazon-marketplace-listentities-api-openapi.yml",
-    "amazon-marketplace-listtagsforresource-api-openapi.yml",
-    "amazon-marketplace-putresourcepolicy-api-openapi.yml",
-    "amazon-marketplace-startchangeset-api-openapi.yml",
-    "amazon-marketplace-tagresource-api-openapi.yml",
-    "amazon-marketplace-untagresource-api-openapi.yml"
+    "_original/amazon-marketplace-openapi-original.yaml"
   ],
   "outputs": [
     "amazon-marketplace-cancelchangeset-catalog-changesetid-api-openapi.yml",
@@ -28,11 +17,53 @@
     "amazon-marketplace-tagresource-api-openapi.yml",
     "amazon-marketplace-untagresource-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 3 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
   "notes": [
-    "apis.yml register: already-registered"
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "amazon-marketplace-openapi-original.yaml: upgraded openapi 3.0.0 -> OpenAPI 3.2.0",
+    "amazon-marketplace-openapi-original.yaml: tagged paths PATCH /CancelChangeSet#catalog&changeSetId -> CancelChangeSet#catalog&changeSetId",
+    "amazon-marketplace-openapi-original.yaml: tagged paths DELETE /DeleteResourcePolicy#resourceArn -> DeleteResourcePolicy#resourceArn",
+    "amazon-marketplace-openapi-original.yaml: tagged paths GET /DescribeChangeSet#catalog&changeSetId -> DescribeChangeSet#catalog&changeSetId",
+    "amazon-marketplace-openapi-original.yaml: tagged paths GET /DescribeEntity#catalog&entityId -> DescribeEntity#catalog&entityId",
+    "amazon-marketplace-openapi-original.yaml: tagged paths GET /GetResourcePolicy#resourceArn -> GetResourcePolicy#resourceArn",
+    "amazon-marketplace-openapi-original.yaml: tagged paths POST /ListChangeSets -> ListChangeSets",
+    "amazon-marketplace-openapi-original.yaml: tagged paths POST /ListEntities -> ListEntities",
+    "amazon-marketplace-openapi-original.yaml: tagged paths POST /ListTagsForResource -> ListTagsForResource",
+    "amazon-marketplace-openapi-original.yaml: tagged paths POST /PutResourcePolicy -> PutResourcePolicy",
+    "amazon-marketplace-openapi-original.yaml: tagged paths POST /StartChangeSet -> StartChangeSet",
+    "amazon-marketplace-openapi-original.yaml: tagged paths POST /TagResource -> TagResource",
+    "amazon-marketplace-openapi-original.yaml: tagged paths POST /UntagResource -> UntagResource",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: CancelChangeSet#catalog&changeSetId",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: DeleteResourcePolicy#resourceArn",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: DescribeChangeSet#catalog&changeSetId",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: DescribeEntity#catalog&entityId",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: GetResourcePolicy#resourceArn",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: ListChangeSets",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: ListEntities",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: ListTagsForResource",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: PutResourcePolicy",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: StartChangeSet",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: TagResource",
+    "amazon-marketplace-openapi-original.yaml: declared missing tag: UntagResource",
+    "superseded outputs removed: amazon-marketplace-list-tags-for-resource-api-openapi.yml, amazon-marketplace-tag-resource-api-openapi.yml, amazon-marketplace-untag-resource-api-openapi.yml",
+    "apis.yml register: written (+3 apis, 12 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "amazon-marketplace-cancelchangeset-catalog-changesetid-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-deleteresourcepolicy-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-describechangeset-catalog-changesetid-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-describeentity-catalog-entityid-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-getresourcepolicy-resourcearn-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-list-tags-for-resource-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-listchangesets-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-listentities-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-putresourcepolicy-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-startchangeset-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-tag-resource-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "amazon-marketplace-untag-resource-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

@@ -1,9 +1,12 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2018-09-17'
   x-release: v4
-  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId Start Change Set API
-  description: <p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
+  title: AWS Marketplace Catalog Service Start Change Set API
+  description: 'Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace.
+
+
+    You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +27,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/marketplace-catalog-2018-09-17.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +129,13 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: StartChangeSet
-      description: <p>Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code> error.</p> <p>For example, you can't start the <code>ChangeSet</code> described in the <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples">example</a> later in this topic because it contains two changes to run the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1</code>).</p> <p>For more information about working with change sets, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets"> Working with change sets</a>. For information on change types for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working with single-AMI products</a>. Als, for more information on change types available for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working with container products</a>.</p>
+      description: 'Allows you to request changes for your entities. Within a single ChangeSet, you can''t start the same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a ResourceInUseException error.
+
+
+        For example, you can''t start the ChangeSet described in the example later in this topic because it contains two changes to run the same change type (AddRevisions) against the same entity (entity-id@1).
+
+
+        For more information about working with change sets, see Working with change sets. For information on change types for single-AMI products, see Working with single-AMI products. Als, for more information on change types available for container-based products, see Working with container products.'
       responses:
         '200':
           description: Success
@@ -222,53 +232,78 @@ paths:
       tags:
       - StartChangeSet
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    ValidationException: {}
-    ServiceQuotaExceededException: {}
-    Identifier:
-      type: string
-      pattern: ^[\w\-@]+$
-      minLength: 1
-      maxLength: 255
-    AccessDeniedException: {}
-    InternalServiceException: {}
-    ChangeName:
-      type: string
-      pattern: ^[a-zA-Z]$
-      minLength: 1
-      maxLength: 72
-    TagValue:
-      type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
-      minLength: 0
-      maxLength: 256
-    ResourceId:
-      type: string
-      pattern: ^[\w\-]+$
-      minLength: 1
-      maxLength: 255
-    Json:
-      type: string
-      pattern: ^[\s]*\{[\s\S]*\}[\s]*$
-      minLength: 2
-      maxLength: 16384
-    ThrottlingException: {}
     EntityType:
       type: string
       pattern: ^[a-zA-Z]+$
       minLength: 1
       maxLength: 255
-    ChangeType:
+    ChangeName:
       type: string
-      pattern: ^[A-Z][\w]*$
+      pattern: ^[a-zA-Z]$
+      minLength: 1
+      maxLength: 72
+    ServiceQuotaExceededException: {}
+    ResourceId:
+      type: string
+      pattern: ^[\w\-]+$
       minLength: 1
       maxLength: 255
-    ARN:
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      minItems: 1
+      maxItems: 200
+    TagKey:
       type: string
-      pattern: ^[a-zA-Z0-9:*/-]+$
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
       minLength: 1
-      maxLength: 2048
-    ResourceNotFoundException: {}
+      maxLength: 128
+    ValidationException: {}
     Change:
       type: object
       required:
@@ -297,23 +332,6 @@ components:
           - $ref: '#/components/schemas/ChangeName'
           - description: Optional name for the change.
       description: An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Tag'
-      minItems: 1
-      maxItems: 200
-    StartChangeSetResponse:
-      type: object
-      properties:
-        ChangeSetId:
-          allOf:
-          - $ref: '#/components/schemas/ResourceId'
-          - description: Unique identifier generated for the request.
-        ChangeSetArn:
-          allOf:
-          - $ref: '#/components/schemas/ARN'
-          - description: The ARN associated to the unique identifier generated for the request.
     Tag:
       type: object
       required:
@@ -329,7 +347,16 @@ components:
           - $ref: '#/components/schemas/TagValue'
           - description: The value associated with the tag.
       description: A list of objects specifying each key name and value.
-    ResourceInUseException: {}
+    Json:
+      type: string
+      pattern: ^[\s]*\{[\s\S]*\}[\s]*$
+      minLength: 2
+      maxLength: 16384
+    TagValue:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 0
+      maxLength: 256
     Entity:
       type: object
       required:
@@ -344,54 +371,37 @@ components:
           - $ref: '#/components/schemas/Identifier'
           - description: The identifier for the entity.
       description: 'An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. '
-    TagKey:
+    ChangeType:
       type: string
-      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      pattern: ^[A-Z][\w]*$
       minLength: 1
-      maxLength: 128
-  parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+      maxLength: 255
+    Identifier:
+      type: string
+      pattern: ^[\w\-@]+$
+      minLength: 1
+      maxLength: 255
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    ResourceInUseException: {}
+    AccessDeniedException: {}
+    InternalServiceException: {}
+    StartChangeSetResponse:
+      type: object
+      properties:
+        ChangeSetId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceId'
+          - description: Unique identifier generated for the request.
+        ChangeSetArn:
+          allOf:
+          - $ref: '#/components/schemas/ARN'
+          - description: The ARN associated to the unique identifier generated for the request.
+    ARN:
+      type: string
+      pattern: ^[a-zA-Z0-9:*/-]+$
+      minLength: 1
+      maxLength: 2048
   securitySchemes:
     hmac:
       type: apiKey

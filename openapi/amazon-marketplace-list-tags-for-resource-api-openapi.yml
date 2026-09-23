@@ -1,9 +1,12 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2018-09-17'
   x-release: v4
-  title: AWS Marketplace Catalog Service CancelChangeSet#catalog&changeSetId Untag Resource API
-  description: <p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>
+  title: AWS Marketplace Catalog Service List Tags For Resource API
+  description: 'Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace.
+
+
+    You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.'
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
     backgroundColor: '#FFFFFF'
@@ -24,6 +27,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/marketplace-catalog-2018-09-17.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -112,9 +116,9 @@ servers:
 security:
 - hmac: []
 tags:
-- name: UntagResource
+- name: List Tags For Resource
 paths:
-  /UntagResource:
+  /ListTagsForResource:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
     - $ref: '#/components/parameters/X-Amz-Date'
@@ -124,15 +128,15 @@ paths:
     - $ref: '#/components/parameters/X-Amz-Signature'
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
-      operationId: UntagResource
-      description: Removes a tag or list of tags from a resource (either an <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#catalog-api-entities">entity</a> or <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">change set</a>).
+      operationId: ListTagsForResource
+      description: Lists all tags that have been added to a resource (either an entity or change set).
       responses:
         '200':
           description: Success
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UntagResourceResponse'
+                $ref: '#/components/schemas/ListTagsForResourceResponse'
         '480':
           description: ResourceNotFoundException
           content:
@@ -172,66 +176,79 @@ paths:
               type: object
               required:
               - ResourceArn
-              - TagKeys
               properties:
                 ResourceArn:
-                  description: Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.
+                  description: Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.
                   type: string
                   pattern: ^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$
                   minLength: 1
                   maxLength: 255
-                TagKeys:
-                  description: 'Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.'
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/TagKey'
-                  minItems: 1
-                  maxItems: 200
-      summary: Amazon Marketplace Untag Resource
+      summary: Amazon Marketplace List Tags for Resource
       tags:
-      - UntagResource
+      - List Tags For Resource
 components:
   schemas:
-    ResourceNotFoundException: {}
+    AccessDeniedException: {}
     InternalServiceException: {}
-    ValidationException: {}
-    ThrottlingException: {}
-    UntagResourceResponse:
+    ResourceARN:
+      type: string
+      pattern: ^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$
+      minLength: 1
+      maxLength: 255
+    Tag:
       type: object
-      properties: {}
+      required:
+      - Key
+      - Value
+      properties:
+        Key:
+          allOf:
+          - $ref: '#/components/schemas/TagKey'
+          - description: The key associated with the tag.
+        Value:
+          allOf:
+          - $ref: '#/components/schemas/TagValue'
+          - description: The value associated with the tag.
+      description: A list of objects specifying each key name and value.
+    ListTagsForResourceResponse:
+      type: object
+      properties:
+        ResourceArn:
+          allOf:
+          - $ref: '#/components/schemas/ResourceARN'
+          - description: Required. The ARN associated with the resource you want to list tags on.
+        Tags:
+          allOf:
+          - $ref: '#/components/schemas/TagList'
+          - description: 'Required. A list of objects specifying each key name and value. Number of objects allowed: 1-50.'
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
     TagKey:
       type: string
       pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
       minLength: 1
       maxLength: 128
-    AccessDeniedException: {}
+    TagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tag'
+      minItems: 1
+      maxItems: 200
+    ValidationException: {}
+    TagValue:
+      type: string
+      pattern: ^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$
+      minLength: 0
+      maxLength: 256
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -242,8 +259,26 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
